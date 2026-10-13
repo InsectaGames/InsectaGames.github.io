@@ -19,6 +19,13 @@
             object-fit: contain;
         }
 
+        .game-logo img{
+            display: block;
+            width: 200px;
+            height: 200px;
+            object-fit: contain;
+        }
+
         .nombre-logo {
             font-size: 1.2rem;
             font-weight: 700;
