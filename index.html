@@ -1,125 +1,218 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Insecta Games</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="/images/logos/logo.png">
+    <script src="script.js" defer></script>
 </head>
+
 <body>
     <header>
-        <div class="logo">
-            <img src="images/logo.png" alt="Insecta Games Logo">
-            <span class="nombre-logo">Insecta Games</span>
+        <div class="left">
+            <img class="clickable" src="images/logos/logo.png" draggable="false" onclick="redirect('inicio')">
+            <p>INSECTA GAMES</p>
         </div>
-        <nav>
-            <a href="#inicio">Inicio</a>
-            <a href="#juego">Nest Invaders</a>
-            <a href="#nosotros">Nosotros</a>
-            <a href="#marketing">Marketing</a>
-        </nav>
-        <a href="" class="boton-jugar">
-        Jugar
-        </a>
+
+        <div class="right">
+            <nav>
+                <a class="clickable" href="#">INICIO</a>
+                <a class="clickable" href="#aboutNest">NEST INVADERS</a>
+                <a class="clickable" href="#aboutUs">SOBRE NOSOTROS</a>
+                <a class="clickable" href="#marketing">MARKETING</a>
+            </nav>
+        </div>
     </header>
-    <main>
-        <section id="inicio">
-            <h2>Bienvenido a Insecta Games</h2>
-            <p>¡Conquista la colmena!</p>
-            <div class="game-logo">
-                <img src="images/logoNegro.png" alt="Nest Invaders Logo">
-            </div>
-            <div class="game-trailer">
-                <p>Aquí iría el trailer del juego.</p>
+
+    <div>
+        <section id="banner">
+            <h1>Bienvenido a Insecta Games</h1>
+            <p><b>¡Conquista la colmena!</b></p>
+
+            <div>
+                <div>
+                    <iframe width="640" height="360" src="https://www.youtube.com/embed/38wy8FR_8aM"></iframe>
+                </div>
+
+                <div>
+                    <input class="clickable" type="button" value="¡JUGAR YA!" onclick="redirect('itchio')">
+                </div>
             </div>
         </section>
 
-        <section id="juego">
-            <h2>Nest Invaders</h2>
-            <p>Nest Invaders es un juego RTS combinado con un Tower Defense donde los jugadores 
-            deberán gestionar recursos para destruir las colmenas enemigas y conquistar el reino 
-            de los insectos.</p>
-            <ul>
-                <li>Género: Estrategia en tiempo real y Tower Defense</li>
-                <li>Plataformas: PC (Web y Steam)</li>
-                <li>Gráficos: 2D</li>
-                <li>Carácterísticas: Sistema de gestión de recursos, Ciclo día-noche, Dificultad incremental</li>
-            </ul>
-            <div class="game-screenshots">
-                <p>Aquí irían las capturas de pantalla del juego.</p>
-            </div>
-            <div class="game-play">
-                <p>Aquí iría un video del gameplay del juego.</p>
+        <section id="aboutNest">
+            <div class="content">
+                <div id="info">
+                    <h1>SOBRE NEST INVADERS</h1>
+                    <p>Nest Invaders es un juego RTS combinado con un Tower Defense donde los jugadores deberán
+                        gestionar
+                        recursos para destruir las colmenas enemigas y conquistar el reino de los insectos.</p>
+
+                    <br>
+                </div>
+
+                <div id="gameInfo">
+                    <div id="screenshots">
+                        <img id="gameplayShowcase" class="clickable" src="images/screenshots/gameplay.gif" draggable="false">
+
+                        <div>
+                            <img class="clickable" src="images/screenshots/screenshot_1.png" draggable="false">
+                            <img class="clickable" src="images/screenshots/screenshot_2.png" draggable="false">
+                            <img class="clickable" src="images/screenshots/screenshot_3.png" draggable="false">
+                        </div>
+                    </div>
+
+                    <div id="caracteristicas">
+                        <p><b>Género:</b> Estrategia en tiempo real y Tower Defense</p>
+
+                        <p><b>Gráficos:</b> 2D</p>
+
+                        <p><b>Características:</b></p>
+                        <ul>
+                            <li>Sistema de gestión de recursos</li>
+                            <li>Ciclo día-noche</li>
+                            <li>Dificultad incremental</li>
+                        </ul>
+
+                        <p><b>Plataformas: </b></p>
+                        <div>
+                            <img class="clickable" src="images/icons/itch.png" onclick="redirect('itchio')" draggable="false">
+                            <img class="clickable" src="images/icons/steam.png" onclick="redirect('steam')" draggable="false">
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section id="nosotros">
-            <h2>Sobre nosotros</h2>
-            <table>
-                <tr>
-                    <th>Miembros del equipo</th>
-                </tr>
-                <tr>
-                    <td>[foto]</td>
-                    <td>Alejandro Marín</td>
-                    <td>Redactor de la documentación, diseñador principal de la web, técnico de sonido, programador y artista auxiliar.</td>
-                </tr>
-                <tr>
-                    <td>[foto]</td>
-                    <td>Miguel Amado</td>
-                    <td>Diseñador y programador principal del comportamiento de los personajes del juego.</td>
-                </tr>
-                <tr>
-                    <td>[foto]</td>
-                    <td>Hugo Checa</td>
-                    <td>Programador auxiliar del comportamiento de los personajes del juego y artista auxiliar.</td>
-                </tr>
-                <tr>
-                    <td>[foto]</td>
-                    <td>Alejandra Alcalá</td>
-                    <td>Artista y diseñadora principal de personajes, escenarios y UI.</td>
-                </tr>
-                <tr>
-                    <td>[foto]</td>
-                    <td>Daniel Mazo</td>
-                    <td>Diseñador de la arquitectura del juego y programador de la lógica general del juego.</td>
-                </tr>
-                <tr>
-                    <td>[foto]</td>
-                    <td>Roberto Rojas</td>
-                    <td>Programador encargado del desarrollo de la lógica general del juego.</td>
-                </tr>
-                <tr>
-                    <td>[foto]</td>
-                    <td>Angie Natalia Prieto</td>
-                    <td>Artista, diseñadora y redactora auxiliar.</td>
-                </tr>
-            </table>
-            <p>El objetivo de Insecta Games es revolucionar y reinventar géneros de nicho que miles de jugadores aman!!!</p>
-            <p>Nest Invaders nació de este objetico, queriendo lleva al público general los géneros RTS y Tower Defense con mecánicas
-            innovadoras y un estilo visual amigable.</p>
+        <section id="aboutUs">
+            <h1>Miembros del Equipo</h1>
+            <hr>
+
+            <div class="content">
+                <div class="member">
+                    <p class="nombre">Alejandro Marín</p>
+                    <img src="images/members/member_1.png" draggable="false">
+                </div>
+
+                <div class="member">
+                    <p class="nombre">Miguel Amado</p>
+                    <img src="images/members/member_1.png" draggable="false">
+                </div>
+
+                <div class="member">
+                    <p class="nombre">Hugo Checa</p>
+                    <img src="images/members/member_1.png" draggable="false">
+                </div>
+
+                <div class="member">
+                    <p class="nombre">Alejandra Alcalá</p>
+                    <img src="images/members/member_1.png" draggable="false">
+                </div>
+
+                <div class="member">
+                    <p class="nombre">Daniel Mazo</p>
+                    <img src="images/members/member_1.png" draggable="false">
+                </div>
+
+                <div class="member">
+                    <p class="nombre">Roberto Rojas</p>
+                    <img src="images/members/member_1.png" draggable="false">
+                </div>
+
+                <div class="member">
+                    <p class="nombre">Angie Natalia Prieto</p>
+                    <img src="images/members/member_1.png" draggable="false">
+                </div>
+            </div>
+
+            <hr>
+
+            <div id="info">
+                <table>
+                    <tr>
+                        <td><b>Alejandro Marín:</b></td>
+                        <td>Redactor de la documentación, diseñador principal de la web, técnico de sonido, programador
+                            y artista auxiliar.</td>
+                    </tr>
+
+                    <tr>
+                        <td><b>Miguel Amado:</b></td>
+                        <td>Diseñador y programador principal del comportamiento de los personajes del juego.</td>
+                    </tr>
+
+                    <tr>
+                        <td><b>Hugo Checha:</b></td>
+                        <td>Programador auxiliar del comportamiento de los personajes del juego y artista auxiliar.</td>
+                    </tr>
+
+                    <tr>
+                        <td><b>Alejandra Alcalá:</b></td>
+                        <td>Artista y diseñadora principal de personajes, escenarios y UI.</td>
+                    </tr>
+
+                    <tr>
+                        <td><b>Daniel Mazo:</b></td>
+                        <td>Diseñador de la arquitectura del juego y programador de la lógica general del juego.</td>
+                    </tr>
+
+                    <tr>
+                        <td><b>Roberto Rojas:</b></td>
+                        <td>Programador encargado del desarrollo de la lógica general del juego.</td>
+                    </tr>
+
+                    <tr>
+                        <td><b>Angie Natalia Prieto:</b></td>
+                        <td>Artista, diseñadora y redactora auxiliar.</td>
+                    </tr>
+                </table>
+
+                <br>
+                <p>El objetivo de Insecta Games es revolucionar y reinventar géneros de nicho que miles de jugadores
+                    aman!!!</p>
+                <p>Nest Invaders nació de este objetico, queriendo lleva al público general los géneros RTS y Tower
+                    Defense con mecánicas innovadoras y un estilo visual amigable.</p>
+            </div>
         </section>
 
         <section id="marketing">
-            <h2>Marketing</h2>
-            <p>Nest Invaders está orientado tanto a jugadores que aman los Tower Defense y los RTS como a nuevos jugadores que quieran
-            aventurarse a estos géneros.</p>
+            <h1>MARKETING</h1>
+
+            <p>Nest Invaders está orientado tanto a jugadores que aman los Tower Defense y los RTS como a nuevos
+                jugadores que quieran aventurarse a estos géneros.</p>
+
+            <br>
             <p>Juegos similares a Nest Invaders serían Ant Colony o Don't Starve Together</p>
-            <p>Inicialmente el juego se lanzaría en Web en Itch.io, sin embargo, en el futuro se contempla un lanzamiento para Steam</p>
+
+            <br>
+            <p>Inicialmente el juego se lanzaría en Web en Itch.io, sin embargo, en el futuro se contempla un
+                lanzamiento para Steam</p>
         </section>
-    </main>
+    </div>
+
     <footer>
-        <div class="contacto">
-            <p>Contacto: insectagamesstudio@gmail.com</p>
+        <div class="left">
+            <p><b>Contacto</b></p>
+            <a class="clickable" href="mailto:insectagamesstudio@gmail.com">insectagamesstudio@gmail.com</a>
+            <p>+34 XXX XXX XXX</p>
         </div>
-        <p>&copy; 2026 Insecta Games</p>
-        <div class="redes">
-            <span>Síguenos en:</span>
-            <a href="https://www.youtube.com/@InsectaGames" target="_blank">Youtube</a>
-            <a href="https://x.com/insectagames" target="_blank">Twitter</a>
-            <a href="https://www.instagram.com/insectagames" target="_blank">Instagram</a>
+
+        <div class="right">
+            <p><b>¡Síguenos en redes!</b></p>
+            <div>
+                <img class="clickable" src="images/icons/twitter.png" onclick="redirect('twitter')" draggable="false">
+                <img class="clickable" src="images/icons/youtube.png" onclick="redirect('youtube')" draggable="false">
+                <img class="clickable" src="images/icons/instagram.png" onclick="redirect('instagram')" draggable="false">
+            </div>
         </div>
+        <p id="cright">© 2026 Insecta Games</p>
     </footer>
-    
+
+    <div id="art_zoom_overlay">
+        <img id="art_zoom_img" src="" draggable="false">
+    </div>
 </body>
+
 </html>
