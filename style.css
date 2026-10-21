@@ -77,23 +77,25 @@ header {
         margin-top: 15px;
     }
 
-    input[type="button"] {
+    .play-link {
+        display: inline-block;
         font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
         padding: 5px 15px;
         margin-top: 10px;
         font-size: 40px;
         background-color: #1aa54f;
+        text-decoration: none;
 
         border: none;
         border-radius: 15px;
     }
 
-    input[type="button"]:hover {
+    .play-link:hover {
         background-color: #148d42;
         transform: translateY(-1px);
     }
 
-    input[type="button"]:active {
+    .play-link:active {
         transform: translateY(1px);
     }
 }
