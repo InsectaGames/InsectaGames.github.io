@@ -81,32 +81,6 @@ header {
         max-width: 400px;
         margin-top: 20px;
     }
-
-    iframe {
-        margin-top: 15px;
-    }
-
-    .play-link {
-        display: inline-block;
-        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-        padding: 5px 15px;
-        margin-top: 10px;
-        font-size: 40px;
-        background-color: #1aa54f;
-        text-decoration: none;
-
-        border: none;
-        border-radius: 15px;
-    }
-
-    .play-link:hover {
-        background-color: #148d42;
-        transform: translateY(-1px);
-    }
-
-    .play-link:active {
-        transform: translateY(1px);
-    }
 }
 
 #nest-invaders {
@@ -117,6 +91,34 @@ header {
 
     padding: 50px;
     padding-bottom: 15px;
+
+    h1 {
+        text-align: left;
+    }
+
+    .content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        p {
+            font-size: 30px;
+            margin-top: 20px;
+        }
+    }
+
+    .right {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 
     img {
         width: 100%;
@@ -132,7 +134,7 @@ header {
         display: inline-block;
         font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
         padding: 5px 15px;
-        margin-top: 10px;
+        margin-top: 20px;
         font-size: 40px;
         background-color: #1aa54f;
         text-decoration: none;
