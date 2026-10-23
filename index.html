@@ -130,83 +130,125 @@
             <h1>Miembros del Equipo</h1>
 
             <div class="content">
-                <div class="member">
+                <div class="member" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="profile-alejandro">
                     <p class="nombre">Alejandro Marín</p>
                     <img src="images/members/member_1.png" draggable="false" alt="Imagen de Alejandro Marín">
                 </div>
 
-                <div class="member">
+                <div class="member" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="profile-miguel">
                     <p class="nombre">Miguel Amado</p>
-                    <img src="images/members/member_1.png" draggable="false" alt="Imagen de Miguel Amado">
+                    <img src="images/members/member_2.png" draggable="false" alt="Imagen de Miguel Amado">
                 </div>
 
-                <div class="member">
+                <div class="member" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="profile-hugo">
                     <p class="nombre">Hugo Checa</p>
-                    <img src="images/members/member_1.png" draggable="false" alt="Imagen de Hugo Checa">
+                    <img src="images/members/member_3.png" draggable="false" alt="Imagen de Hugo Checa">
                 </div>
 
-                <div class="member">
+                <div class="member" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="profile-alejandra">
                     <p class="nombre">Alejandra Alcalá</p>
-                    <img src="images/members/member_1.png" draggable="false" alt="Imagen de Alejandra Alcalá">
+                    <img src="images/members/member_4.png" draggable="false" alt="Imagen de Alejandra Alcalá">
                 </div>
 
-                <div class="member">
+                <div class="member" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="profile-daniel">
                     <p class="nombre">Daniel Mazo</p>
-                    <img src="images/members/member_1.png" draggable="false" alt="Imagen de Daniel Mazo">
+                    <img src="images/members/member_5.png" draggable="false" alt="Imagen de Daniel Mazo">
                 </div>
 
-                <div class="member">
+                <div class="member" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="profile-roberto">
                     <p class="nombre">Roberto Rojas</p>
-                    <img src="images/members/member_1.png" draggable="false" alt="Imagen de Roberto Rojas">
+                    <img src="images/members/member_6.png" draggable="false" alt="Imagen de Roberto Rojas">
                 </div>
 
-                <div class="member">
+                <div class="member" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="profile-angie">
                     <p class="nombre">Angie Natalia Prieto</p>
-                    <img src="images/members/member_1.png" draggable="false" alt="Imagen de Angie Natalia Prieto">
+                    <img src="images/members/member_7.png" draggable="false" alt="Imagen de Angie Natalia Prieto">
                 </div>
             </div>
 
-            <hr>
+            <dialog class="member-profile" id="profile-alejandro" aria-labelledby="profile-name-alejandro">
+                <button class="member-profile-close" type="button" aria-label="Cerrar perfil">Cerrar</button>
+                <div class="member-profile-content">
+                    <img src="images/members/member_1.png" alt="Imagen de Alejandro Marín">
+                    <div>
+                        <h2 id="profile-name-alejandro">Alejandro Marín</h2>
+                        <p>Redactor de la documentación, diseñador principal de la web, técnico de sonido,
+                            programador y artista auxiliar.</p>
+                        <p>Aquí tienes mi Github: <a href="https://github.com/Warriorlink" target="_blank" rel="noopener noreferrer">Warriorlink</a></p>
+                    </div>
+                </div>
+            </dialog>
 
-            <div id="info">
-                <table>
-                    <tr>
-                        <td><b>Alejandro Marín:</b></td>
-                        <td>Redactor de la documentación, diseñador principal de la web, técnico de sonido, programador
-                            y artista auxiliar.</td>
-                    </tr>
+            <dialog class="member-profile" id="profile-miguel" aria-labelledby="profile-name-miguel">
+                <button class="member-profile-close" type="button" aria-label="Cerrar perfil">Cerrar</button>
+                <div class="member-profile-content">
+                    <img src="images/members/member_2.png" alt="Imagen de Miguel Amado">
+                    <div>
+                        <h2 id="profile-name-miguel">Miguel Amado</h2>
+                        <p>Diseñador y programador principal del comportamiento de los personajes del juego.</p>
+                        <p>Aquí tienes mi Github: <a href="https://github.com/Miguel548" target="_blank" rel="noopener noreferrer">Miguel548</a></p>
+                    </div>
+                </div>
+            </dialog>
 
-                    <tr>
-                        <td><b>Miguel Amado:</b></td>
-                        <td>Diseñador y programador principal del comportamiento de los personajes del juego.</td>
-                    </tr>
+            <dialog class="member-profile" id="profile-hugo" aria-labelledby="profile-name-hugo">
+                <button class="member-profile-close" type="button" aria-label="Cerrar perfil">Cerrar</button>
+                <div class="member-profile-content">
+                    <img src="images/members/member_3.png" alt="Imagen de Hugo Checa">
+                    <div>
+                        <h2 id="profile-name-hugo">Hugo Checa</h2>
+                        <p>Programador auxiliar del comportamiento de los personajes del juego y artista principal de marketing.</p>
+                        <p>Aquí tienes mi Github: <a href="https://github.com/HugoCh05" target="_blank" rel="noopener noreferrer">HugoCh05</a></p>
+                    </div>
+                </div>
+            </dialog>
 
-                    <tr>
-                        <td><b>Hugo Checha:</b></td>
-                        <td>Programador auxiliar del comportamiento de los personajes del juego y artista auxiliar.</td>
-                    </tr>
+            <dialog class="member-profile" id="profile-alejandra" aria-labelledby="profile-name-alejandra">
+                <button class="member-profile-close" type="button" aria-label="Cerrar perfil">Cerrar</button>
+                <div class="member-profile-content">
+                    <img src="images/members/member_4.png" alt="Imagen de Alejandra Alcalá">
+                    <div>
+                        <h2 id="profile-name-alejandra">Alejandra Alcalá</h2>
+                        <p>Artista y diseñadora principal de personajes, escenarios y UI.</p>
+                        <p>Aquí tienes mi portfolio: <a href="https://a-a-d.artstation.com/" target="_blank" rel="noopener noreferrer">AAD Portfolio</a></p>
+                    </div>
+                </div>
+            </dialog>
 
-                    <tr>
-                        <td><b>Alejandra Alcalá:</b></td>
-                        <td>Artista y diseñadora principal de personajes, escenarios y UI.</td>
-                    </tr>
+            <dialog class="member-profile" id="profile-daniel" aria-labelledby="profile-name-daniel">
+                <button class="member-profile-close" type="button" aria-label="Cerrar perfil">Cerrar</button>
+                <div class="member-profile-content">
+                    <img src="images/members/member_5.png" alt="Imagen de Daniel Mazo">
+                    <div>
+                        <h2 id="profile-name-daniel">Daniel Mazo</h2>
+                        <p>Diseñador de la arquitectura del juego y programador de la lógica general del juego.</p>
+                        <p>Aquí tienes mi Github: <a href="https://github.com/DanielMazado" target="_blank" rel="noopener noreferrer">DanielMazado</a></p>
+                    </div>
+                </div>
+            </dialog>
 
-                    <tr>
-                        <td><b>Daniel Mazo:</b></td>
-                        <td>Diseñador de la arquitectura del juego y programador de la lógica general del juego.</td>
-                    </tr>
+            <dialog class="member-profile" id="profile-roberto" aria-labelledby="profile-name-roberto">
+                <button class="member-profile-close" type="button" aria-label="Cerrar perfil">Cerrar</button>
+                <div class="member-profile-content">
+                    <img src="images/members/member_6.png" alt="Imagen de Roberto Rojas">
+                    <div>
+                        <h2 id="profile-name-roberto">Roberto Rojas</h2>
+                        <p>Programador encargado del desarrollo de la lógica general del juego.</p>
+                        <p>Aquí tienes mi Github: <a href="https://github.com/RRnight42" target="_blank" rel="noopener noreferrer">RRnight42</a></p>
+                    </div>
+                </div>
+            </dialog>
 
-                    <tr>
-                        <td><b>Roberto Rojas:</b></td>
-                        <td>Programador encargado del desarrollo de la lógica general del juego.</td>
-                    </tr>
-
-                    <tr>
-                        <td><b>Angie Natalia Prieto:</b></td>
-                        <td>Artista, diseñadora y redactora auxiliar.</td>
-                    </tr>
-                </table>
-            </div>
+            <dialog class="member-profile" id="profile-angie" aria-labelledby="profile-name-angie">
+                <button class="member-profile-close" type="button" aria-label="Cerrar perfil">Cerrar</button>
+                <div class="member-profile-content">
+                    <img src="images/members/member_7.png" alt="Imagen de Angie Natalia Prieto">
+                    <div>
+                        <h2 id="profile-name-angie">Angie Natalia Prieto</h2>
+                        <p>Artista, diseñadora y redactora auxiliar.</p>
+                    </div>
+                </div>
+            </dialog>
         </section>
 
 
@@ -242,7 +284,7 @@
                 </div>
 
                 <div class="juegos-similares">
-                    <h2>JUEGOS SIMILARES</h2>
+                    <h2>JUEGOS REFERENTES</h2>
                     <div class="grid">
                         <div class="ant-colony">
                             <h3>Ant Colony</h3>
