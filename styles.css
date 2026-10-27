@@ -6,10 +6,13 @@
 }
 
 body {
-    background-color: rgb(9, 93, 50);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     cursor: url("images/mouse/cursor.png"), auto;
     overflow-x: hidden;
+}
+
+.section-gradient {
+    background: linear-gradient(to bottom, var(--section-start-color), var(--section-end-color));
 }
 
 .clickable {
@@ -22,9 +25,9 @@ header {
     display: flex;
     position: sticky;
     top: 0;
-    box-shadow: 0px 0px 5px 2px rgb(0, 50, 28);
+    box-shadow: 0px 0px 5px 2px #02111B;
 
-    background-color: #095513;
+    background-color: #052f4a;
 
     padding: 10px;
 
@@ -55,14 +58,15 @@ header {
         }
 
         a:hover {
-            color: rgb(54, 9, 93);
+            color: rgb(0, 0, 0);
         }
     }
 }
 
 #banner {
     height: 560px;
-    background: linear-gradient(to bottom, #1aa54f, black);
+    --section-start-color: black;
+    --section-end-color: #1f2d12;
 
     text-align: center;
 
@@ -84,13 +88,13 @@ header {
 }
 
 #nest-invaders {
-    background-image: url(images/bg_forest.jpeg);
+    background-image: url(images/bg_forest_2.png);
     background-size: cover;
 
     text-align: center;
 
     padding: 50px;
-    padding-bottom: 15px;
+    padding-bottom: 30px;
 
     h1 {
         text-align: left;
@@ -136,7 +140,7 @@ header {
         padding: 5px 15px;
         margin-top: 20px;
         font-size: 40px;
-        background-color: #1aa54f;
+        background-color: #5AFF15;
         text-decoration: none;
 
         border: none;
@@ -144,7 +148,7 @@ header {
     }
 
     .play-link:hover {
-        background-color: #148d42;
+        background-color: #4bd211;
         transform: translateY(-1px);
     }
 
@@ -154,6 +158,11 @@ header {
 }
 
 #aboutNest {
+    --section-start-color: #1f2d12;
+    --section-end-color: #0a081d;
+
+    padding-top: 30px;
+    padding-bottom: 30px;
 
     h1 {
         margin-top: 10px;
@@ -166,8 +175,6 @@ header {
     .content {
         padding: 50px;
         padding-bottom: 15px;
-
-        margin-top: 12px;
         padding-top: 10px;
 
         align-items: center;
@@ -214,17 +221,15 @@ header {
 #aboutUs {
     padding: 50px;
     padding-bottom: 20px;
-    padding-top: 0px;
+    padding-top: 30px;
     text-align: center;
+    --section-start-color: #0a081d;
+    --section-end-color: #14081d;
 
     h1 {
-        margin-bottom: 10px;
+        margin-bottom: 40px;
         margin-top: 10px;
         font-size: 35px;
-    }
-
-    hr {
-        margin-bottom: 20px;
     }
 
     .content {
@@ -237,7 +242,7 @@ header {
     .member {
         padding: 15px;
         text-align: center;
-        background-color: cadetblue;
+        background-color: #5f2f8f;
         border: 3px solid black;
         clip-path: polygon(10% 0, 100% 0, 100% 85%, 90% 100%, 0 100%, 0 15%);
         position: relative;
@@ -285,9 +290,12 @@ header {
 }
 
 #objetivos {
-    padding: 10px 50px 30px;
+    padding: 30px 50px 30px;
+    --section-start-color: #14081d;
+    --section-end-color: #14081d;
+    color: #2c043b;
 
-    hr {
+    h1, h2 {
         margin-bottom: 20px;
     }
 
@@ -337,7 +345,7 @@ header {
             overflow: hidden;
             border: 1px solid rgb(255 255 255 / 22%);
             border-radius: 12px;
-            background: rgb(0 0 0 / 18%);
+            background: #0c6da9;
             box-shadow: 0 5px 14px rgb(0 0 0 / 20%);
         }
 
@@ -387,7 +395,7 @@ header {
         padding: 16px; 
     }
     .frente { 
-        background: linear-gradient(135deg, rgb(30, 151, 50), rgb(17, 102, 45)); 
+        background: linear-gradient(135deg, #7700ff, #5ec7ff); 
         color: #fff; 
         font-weight: 900; 
         font-size: 22px; 
@@ -407,9 +415,9 @@ header {
 footer {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    box-shadow: 0px 0px 5px 2px rgb(0, 50, 28);
+    box-shadow: 0px 0px 5px 2px #02111B;
 
-    background-color: #095513;
+    background-color: #02111B;
 
     padding: 10px;
 
@@ -451,7 +459,7 @@ dialog.member-profile {
     max-height: calc(100% - 32px);
     padding: clamp(20px, 4vw, 36px);
     border: 3px solid black;
-    background: cadetblue;
+    background: #5f2f8f;
     color: white;
     transform: translate(-50%, -50%);
 }
@@ -466,7 +474,7 @@ dialog.member-profile::backdrop {
     padding: 5px 15px;
     border: none;
     border-radius: 15px;
-    background-color: #1aa54f;
+    background-color: #5AFF15;
     color: white;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 20px;
@@ -474,7 +482,7 @@ dialog.member-profile::backdrop {
 }
 
 .member-profile-close:hover {
-    background-color: #148d42;
+    background-color: #4bd211;
     transform: translateY(-1px);
 }
 
