@@ -576,6 +576,380 @@ dialog.member-profile::backdrop {
     }
 }
 
+@media (max-width: 1100px) {
+    #aboutNest .content #gameInfo {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    #objetivos .escena {
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        aspect-ratio: 5 / 3;
+    }
+
+    #objetivos .cara {
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 800px) {
+    * {
+        box-sizing: border-box;
+    }
+
+    header {
+        flex-direction: column;
+        gap: 8px;
+        padding: 10px 16px;
+
+        .left,
+        .right {
+            margin: 0 auto;
+        }
+
+        .right nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            a {
+                padding: 8px;
+                text-align: center;
+            }
+        }
+    }
+
+    #banner {
+        height: auto;
+        padding: 40px 24px;
+
+        .content {
+            grid-template-columns: minmax(0, 1fr);
+            gap: 24px;
+
+            .left {
+                align-items: center;
+
+                p {
+                    text-align: center;
+                    font-size: 24px;
+                    margin-bottom: 16px;
+                }
+            }
+
+            .links {
+                justify-content: center;
+            }
+
+            .right img {
+                max-width: 300px;
+            }
+        }
+
+        h1 {
+            padding-left: 0;
+            font-size: clamp(56px, 10vw, 76px);
+            text-align: center;
+        }
+    }
+
+    #nest-invaders {
+        padding: 40px 24px 30px;
+
+        .content {
+            grid-template-columns: minmax(0, 1fr);
+            gap: 32px;
+        }
+
+        .right,
+        .right > div {
+            width: 100%;
+        }
+
+        iframe {
+            display: block;
+            width: 100%;
+            max-width: 640px;
+            height: auto;
+            aspect-ratio: 16 / 9;
+            margin: 15px auto 0;
+        }
+
+        .play-link {
+            font-size: clamp(30px, 7vw, 40px);
+        }
+    }
+
+    #aboutNest {
+        .content {
+            padding: 32px 24px 15px;
+
+            #gameInfo {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 24px;
+
+                #screenshots {
+                    grid-template-columns: minmax(0, 1fr);
+
+                    #gameplayShowcase {
+                        width: 100%;
+                        max-height: 360px;
+                        object-fit: contain;
+                    }
+
+                    > div {
+                        display: grid;
+                        grid-template-columns: repeat(3, minmax(0, 1fr));
+                    }
+
+                    > div img {
+                        width: 100%;
+                        height: clamp(56px, 18vw, 90px);
+                        padding: 6px;
+                        object-fit: cover;
+                    }
+                }
+            }
+        }
+    }
+
+    #aboutUs {
+        padding: 40px 24px 20px;
+
+        .content {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 24px;
+        }
+
+        .member:nth-child(5),
+        .member:nth-child(6),
+        .member:nth-child(7) {
+            grid-column: auto;
+            width: auto;
+            justify-self: stretch;
+            transform: none;
+        }
+    }
+
+    #objetivos {
+        padding: 30px 24px;
+
+        .content {
+            grid-template-columns: minmax(0, 1fr);
+            gap: 24px;
+        }
+
+        .escena {
+            box-sizing: border-box;
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            aspect-ratio: 5 / 3;
+            margin: 0 auto;
+        }
+
+        .cara {
+            box-sizing: border-box;
+        }
+    }
+
+    footer {
+        gap: 20px;
+
+        .left,
+        .right {
+            margin: 0;
+        }
+
+        .right {
+            align-items: flex-start;
+        }
+    }
+}
+
+@media (max-width: 560px) {
+    header {
+        .left {
+            img {
+                height: 40px;
+            }
+
+            p {
+                margin-left: 10px;
+                font-size: 22px;
+            }
+        }
+
+        .right nav a {
+            padding: 6px;
+            font-size: 16px;
+        }
+    }
+
+    #banner {
+        padding: 32px 16px;
+
+        .content {
+            gap: 20px;
+
+            .left p {
+                font-size: 19px;
+            }
+
+            .links {
+                gap: 8px;
+
+                .play-link {
+                    padding: 4px 8px;
+                    margin-top: 8px;
+                    font-size: 21px;
+                }
+            }
+
+            .right img {
+                max-width: 220px;
+            }
+        }
+
+        h1 {
+            font-size: clamp(48px, 13vw, 64px);
+        }
+    }
+
+    #nest-invaders {
+        padding: 32px 16px 24px;
+
+        h1 {
+            font-size: 28px;
+        }
+
+        .left p {
+            font-size: 21px;
+        }
+
+        .left .game-tags {
+            gap: 6px;
+
+            span {
+                font-size: 12px;
+            }
+        }
+    }
+
+    #aboutNest {
+        h1 {
+            font-size: 26px;
+        }
+
+        .content {
+            padding: 24px 16px 10px;
+
+            p,
+            #gameInfo #caracteristicas,
+            #gameInfo #caracteristicas p {
+                font-size: 17px;
+            }
+
+            #gameInfo #caracteristicas {
+                padding: 10px;
+
+                img {
+                    height: 48px;
+                    padding: 6px;
+                }
+            }
+        }
+    }
+
+    #aboutUs {
+        padding: 32px 16px 20px;
+
+        h1 {
+            margin-bottom: 28px;
+            font-size: 30px;
+        }
+
+        .content {
+            grid-template-columns: minmax(0, 1fr);
+            gap: 18px;
+        }
+
+        .member {
+            width: 100%;
+            max-width: 360px;
+            justify-self: center;
+
+            .nombre {
+                font-size: 22px;
+            }
+        }
+
+        .member:nth-child(5),
+        .member:nth-child(6),
+        .member:nth-child(7) {
+            width: 100%;
+            justify-self: center;
+        }
+    }
+
+    #objetivos {
+        padding: 24px 16px;
+
+        h1 {
+            font-size: 27px;
+        }
+
+        .cartas-objetivos {
+            padding: 0;
+        }
+
+        .escena {
+            padding: 10px;
+        }
+
+        .cara {
+            padding: 12px;
+        }
+
+        .frente {
+            font-size: 19px;
+        }
+
+        .dorso {
+            font-size: 15px;
+        }
+
+        .juegos-similares {
+            padding: 0;
+        }
+
+        .juegos-similares .grid {
+            grid-template-columns: minmax(0, 1fr);
+        }
+    }
+
+    footer {
+        grid-template-columns: minmax(0, 1fr);
+        padding: 20px 16px;
+        text-align: center;
+
+        .left,
+        .right {
+            align-items: center;
+        }
+
+        .left a {
+            overflow-wrap: anywhere;
+        }
+
+        #cright {
+            grid-column: auto;
+        }
+    }
+}
+
 #art_zoom_overlay {
     display: none;
     position: fixed;
