@@ -68,9 +68,8 @@ header {
     --section-start-color: black;
     --section-end-color: #1f2d12;
 
-    text-align: left;
-
     padding: 50px;
+    padding-top: 80px;
     padding-bottom: 15px;
 
     .content {
@@ -93,12 +92,13 @@ header {
         .left {
             display: flex;
             flex-direction: column;
-            align-items: left;
+            align-items: center;
 
             p {
                 font-size: 30px;
-                margin-top: 20px;
-                margin-bottom: 40px;
+                margin-top: 40px;
+                margin-bottom: 60px;
+                text-align: center;
             }
         }
 
@@ -193,7 +193,7 @@ header {
     padding: 5px 15px;
     margin-top: 20px;
     font-size: 40px;
-    background-color: #5AFF15;
+    background-color: #2f7e0d;
     text-decoration: none;
 
     border: none;
@@ -201,7 +201,7 @@ header {
 }
 
 .play-link:hover {
-    background-color: #4bd211;
+    background-color: #225a0a;
     transform: translateY(-1px);
 }
 
@@ -246,6 +246,8 @@ header {
                 img {
                     height: 90px;
                     padding: 10px;
+                    position: relative;
+                    transition: transform 0.2s ease, filter 0.2s ease;
                 }
             }
 
@@ -267,6 +269,23 @@ header {
                 }
             }
         }
+    }
+}
+
+@media (hover: hover) {
+    #aboutNest #screenshots img:hover {
+        z-index: 1;
+        transform: scale(1.05);
+        filter: drop-shadow(0 6px 10px rgb(0 0 0 / 35%));
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #aboutNest #screenshots img,
+    #aboutNest #screenshots img:hover {
+        transition: none;
+        transform: none;
+        filter: none;
     }
 }
 
@@ -469,7 +488,7 @@ footer {
     grid-template-columns: 1fr 1fr;
     box-shadow: 0px 0px 5px 2px #02111B;
 
-    background-color: #02111B;
+    background-color: #052f4a;
 
     padding: 10px;
 
@@ -514,6 +533,16 @@ dialog.member-profile {
     background: #5f2f8f;
     color: white;
     transform: translate(-50%, -50%);
+    font-size: clamp(16px, 1.5vw, 20px);
+
+    h2 {
+        font-size: clamp(30px, 3vw, 30px);
+        padding-bottom: 15px;
+    }
+
+    p{
+        margin-bottom: 12px;
+    }
 }
 
 dialog.member-profile::backdrop {
@@ -524,9 +553,9 @@ dialog.member-profile::backdrop {
     display: block;
     margin: 0 0 16px auto;
     padding: 5px 15px;
-    border: none;
+    border: 2px solid black;
     border-radius: 15px;
-    background-color: #5AFF15;
+    background-color: #2a0c60;
     color: white;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 20px;
@@ -534,7 +563,7 @@ dialog.member-profile::backdrop {
 }
 
 .member-profile-close:hover {
-    background-color: #4bd211;
+    background-color: #190739;
     transform: translateY(-1px);
 }
 
@@ -562,6 +591,55 @@ dialog.member-profile::backdrop {
     p {
         line-height: 1.6;
     }
+}
+
+.member-profile-content a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+    padding: 8px 14px;
+    border: 2px solid rgb(0 0 0 / 35%);
+    border-radius: 12px;
+    background-color: #163a63;
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-decoration: none;
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.member-profile-content a img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+.member-profile-content a[href*="github.com"]:hover {
+    background-color: #0c2847;
+}
+
+.member-profile-content a[href*="artstation.com"] {
+    background-color: #8fd4ff;
+    color: #08243a;
+}
+
+.member-profile-content a[href*="artstation.com"]:hover {
+    background-color: #6bc3fa;
+}
+
+.member-profile-content a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgb(0 0 0 / 25%);
+}
+
+.member-profile-content a:active {
+    transform: translateY(1px);
+    box-shadow: none;
+}
+
+.member-profile-content a:focus-visible {
+    outline: 3px solid white;
+    outline-offset: 3px;
 }
 
 @media (max-width: 560px) {
