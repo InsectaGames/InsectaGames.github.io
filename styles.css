@@ -68,14 +68,51 @@ header {
     --section-start-color: black;
     --section-end-color: #1f2d12;
 
-    text-align: center;
+    text-align: left;
 
     padding: 50px;
     padding-bottom: 15px;
 
+    .content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+
+            .play-link {
+                padding: 4px 10px;
+                margin-top: 12px;
+                font-size: 28px;
+                border-radius: 12px;
+            }
+        }
+
+        .left {
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+
+            p {
+                font-size: 30px;
+                margin-top: 20px;
+                margin-bottom: 40px;
+            }
+        }
+
+        .right {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
     h1 {
-        font-size: 50px;
-        padding: 10px;
+        font-size: 90px;
+        padding-left: 30px;
         margin-bottom: 0px;
         padding-bottom: 0px;
     }
@@ -83,7 +120,6 @@ header {
     img {
         width: 100%;
         max-width: 400px;
-        margin-top: 20px;
     }
 }
 
@@ -112,8 +148,23 @@ header {
         justify-content: center;
 
         p {
-            font-size: 30px;
+            font-size: 25px;
             margin-top: 20px;
+        }
+
+        .game-tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 20px;
+
+            span {
+                padding: 5px 10px;
+                border-radius: 12px;
+                background-color: rgba(25, 75, 35, 0.7);
+                font-size: 14px;
+            }
         }
     }
 
@@ -126,7 +177,7 @@ header {
 
     img {
         width: 100%;
-        max-width: 400px;
+        max-width: 300px;
         margin-top: 10px;
     }
 
@@ -134,27 +185,28 @@ header {
         margin-top: 15px;
     }
 
-    .play-link {
-        display: inline-block;
-        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-        padding: 5px 15px;
-        margin-top: 20px;
-        font-size: 40px;
-        background-color: #5AFF15;
-        text-decoration: none;
+}
 
-        border: none;
-        border-radius: 15px;
-    }
+.play-link {
+    display: inline-block;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    padding: 5px 15px;
+    margin-top: 20px;
+    font-size: 40px;
+    background-color: #5AFF15;
+    text-decoration: none;
 
-    .play-link:hover {
-        background-color: #4bd211;
-        transform: translateY(-1px);
-    }
+    border: none;
+    border-radius: 15px;
+}
 
-    .play-link:active {
-        transform: translateY(1px);
-    }    
+.play-link:hover {
+    background-color: #4bd211;
+    transform: translateY(-1px);
+}
+
+.play-link:active {
+    transform: translateY(1px);
 }
 
 #aboutNest {
