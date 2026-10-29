@@ -61,6 +61,10 @@ header {
             color: rgb(0, 0, 0);
         }
     }
+
+    .menu-toggle {
+        display: none;
+    }
 }
 
 #banner {
@@ -849,6 +853,91 @@ dialog.member-profile::backdrop {
 
         .right {
             align-items: flex-start;
+        }
+    }
+}
+
+@media (max-width: 1100px) {
+    header {
+        align-items: center;
+        flex-direction: row;
+        gap: 0;
+
+        .left,
+        .right {
+            margin: 0;
+        }
+
+        .left {
+            margin-right: auto;
+        }
+
+        .right {
+            position: static;
+            align-items: center;
+        }
+
+        .menu-toggle {
+            display: flex;
+            width: 44px;
+            height: 44px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 8px;
+            border: 0;
+            border-radius: 6px;
+            background: transparent;
+        }
+
+        .menu-toggle:focus-visible {
+            outline: 2px solid white;
+            outline-offset: 2px;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 26px;
+            height: 3px;
+            border-radius: 2px;
+            background: white;
+        }
+
+        &.menu-open .menu-toggle span:first-child {
+            transform: translateY(9px) rotate(45deg);
+        }
+
+        &.menu-open .menu-toggle span:nth-child(2) {
+            opacity: 0;
+        }
+
+        &.menu-open .menu-toggle span:last-child {
+            transform: translateY(-9px) rotate(-45deg);
+        }
+
+        .right nav {
+            position: absolute;
+            top: 100%;
+            right: 16px;
+            z-index: 1;
+            display: none;
+            width: min(280px, calc(100vw - 32px));
+            flex-direction: column;
+            align-items: stretch;
+            padding: 8px;
+            border-radius: 8px;
+            background-color: #052f4a;
+            box-shadow: 0 4px 12px rgb(0 0 0 / 35%);
+
+            a {
+                padding: 12px;
+                text-align: left;
+            }
+        }
+
+        &.mobile-nav-ready .right nav.is-open {
+            display: flex;
         }
     }
 }
