@@ -388,6 +388,58 @@ header {
         grid-column: 4 / 5;
         transform: translateX(-50%);
     }
+
+    .team-projects {
+        max-width: 1000px;
+        margin: 56px auto 20px;
+    }
+
+    .team-projects h3 {
+        margin: 0 0 10px;
+        font-size: 28px;
+    }
+
+    .team-projects-intro {
+        margin-bottom: 24px;
+        color: rgb(255 255 255 / 80%);
+    }
+
+    .team-projects-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+    }
+
+    .project-card {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        padding: 12px;
+        border: 3px solid black;
+        background-color: #5f2f8f;
+        clip-path: polygon(8% 0, 100% 0, 100% 88%, 92% 100%, 0 100%, 0 12%);
+        font: inherit;
+        font-size: 20px;
+        cursor: url("images/mouse/pointer.png"), pointer;
+    }
+
+    .project-card img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    .project-card:hover {
+        transform: translateY(-4px);
+        filter: drop-shadow(0 9px 20px rgb(0 0 0 / 30%));
+    }
+
+    .project-card:focus-visible {
+        outline: 3px solid white;
+        outline-offset: 4px;
+    }
 }
 
 #objetivos {
@@ -678,6 +730,42 @@ dialog.member-profile::backdrop {
     outline-offset: 3px;
 }
 
+.project-profile-content {
+    align-items: start;
+}
+
+.project-profile-content h2 {
+    margin-bottom: 12px;
+}
+
+.project-members {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin: -4px 0 12px;
+    padding: 0;
+    list-style: none;
+}
+
+.project-members li {
+    padding: 5px 10px;
+    border-radius: 999px;
+    background: rgb(42 12 96 / 65%);
+    font-size: 0.9em;
+}
+
+.project-profile-content .play-link {
+    display: flex;
+    width: fit-content;
+    margin-top: 4px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 8px 14px;
+    border-radius: 12px;
+    font-size: 22px;
+}
+
 @media (max-width: 560px) {
     .member-profile-content {
         grid-template-columns: minmax(0, 1fr);
@@ -687,6 +775,75 @@ dialog.member-profile::backdrop {
         img {
             max-width: 180px;
         }
+    }
+}
+
+@media (orientation: landscape) and (max-height: 600px) {
+    dialog.member-profile.project-profile {
+        top: 50%;
+        right: 12px;
+        bottom: auto;
+        left: 12px;
+        width: auto;
+        height: fit-content;
+        max-height: calc(100vh - 16px);
+        max-height: calc(100dvh - 16px);
+        padding: 12px clamp(14px, 3vw, 24px);
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        transform: translateY(-50%);
+    }
+
+    .project-profile .member-profile-close {
+        margin-bottom: 8px;
+        padding: 4px 12px;
+        font-size: 17px;
+    }
+
+    .project-profile .project-profile-content {
+        gap: clamp(10px, 2vw, 18px);
+    }
+
+    .project-profile .member-profile-content {
+        grid-template-columns: minmax(0, 32%) minmax(0, 1fr);
+        align-items: center;
+        text-align: left;
+    }
+
+    #aboutUs .project-profile h2 {
+        margin-bottom: 6px;
+        padding-bottom: 0;
+        font-size: clamp(20px, 4vh, 24px);
+    }
+
+    .project-profile-content > img {
+        width: 100%;
+        max-width: none;
+        max-height: 30vh;
+        aspect-ratio: 16 / 10;
+        object-fit: contain;
+    }
+
+    .project-profile .project-profile-content p {
+        margin-bottom: 6px;
+        font-size: 14px;
+        line-height: 1.35;
+    }
+
+    .project-profile .project-members {
+        gap: 6px;
+        margin: -2px 0 8px;
+    }
+
+    .project-profile .project-members li {
+        padding: 3px 8px;
+        font-size: 12px;
+    }
+
+    .project-profile .project-profile-content .play-link {
+        margin-top: 2px;
+        padding: 6px 10px;
+        font-size: 17px;
     }
 }
 
@@ -830,6 +987,10 @@ dialog.member-profile::backdrop {
             width: auto;
             justify-self: stretch;
             transform: none;
+        }
+
+        .team-projects-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
         }
     }
 
@@ -1081,6 +1242,24 @@ dialog.member-profile::backdrop {
         .member:nth-child(7) {
             width: 100%;
             justify-self: center;
+        }
+
+        .team-projects {
+            margin-top: 40px;
+        }
+
+        .team-projects h3 {
+            font-size: 25px;
+        }
+
+        .team-projects-grid {
+            grid-template-columns: minmax(0, 1fr);
+            justify-items: center;
+        }
+
+        .project-card {
+            width: 100%;
+            max-width: 360px;
         }
     }
 

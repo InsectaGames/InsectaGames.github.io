@@ -85,6 +85,28 @@ document.querySelectorAll(".member[aria-controls]").forEach((member) => {
     });
 });
 
+document.querySelectorAll(".project-card[aria-controls]").forEach((project) => {
+    const profile = document.getElementById(project.getAttribute("aria-controls"));
+
+    if (!(profile instanceof HTMLDialogElement)) {
+        throw new Error(`No se encontró el panel del proyecto: ${project.getAttribute("aria-controls")}`);
+    }
+
+    project.addEventListener("click", () => profile.showModal());
+    profile.querySelector(".member-profile-close").addEventListener("click", () => profile.close());
+    profile.addEventListener("click", (event) => {
+        if (event.target === profile) {
+            profile.close();
+        }
+    });
+    profile.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+            event.preventDefault();
+            profile.close();
+        }
+    });
+});
+
 const openArtZoom = (e) => {
     const img = e.target;
 
