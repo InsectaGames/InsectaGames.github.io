@@ -300,7 +300,8 @@ header {
 }
 
 @media (hover: hover) {
-    #aboutNest #screenshots img:hover {
+    #aboutNest #screenshots img:hover,
+    #devlog .hito-imagenes img:hover {
         z-index: 1;
         transform: scale(1.05);
         filter: drop-shadow(0 6px 10px rgb(0 0 0 / 35%));
@@ -309,7 +310,9 @@ header {
 
 @media (prefers-reduced-motion: reduce) {
     #aboutNest #screenshots img,
-    #aboutNest #screenshots img:hover {
+    #aboutNest #screenshots img:hover,
+    #devlog .hito-imagenes img,
+    #devlog .hito-imagenes img:hover {
         transition: none;
         transform: none;
         filter: none;
@@ -1236,6 +1239,7 @@ dialog.member-profile::backdrop {
             border: 1px solid rgb(255 255 255 / 14%);
             border-radius: 10px;
             object-fit: cover;
+            transition: transform 0.2s ease, filter 0.2s ease;
         }
     }
 
