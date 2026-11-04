@@ -136,7 +136,9 @@ header {
     padding: 50px;
     padding-bottom: 30px;
 
-    h1 {
+    h2 {
+        font-size: 2em;
+        margin-bottom: 0.67em;
         margin-top: 40px;
         text-align: left;
     }
@@ -239,7 +241,9 @@ header {
     padding-top: 30px;
     padding-bottom: 30px;
 
-    h1 {
+    h2 {
+        font-size: 2em;
+        margin-bottom: 0.67em;
         margin-top: 10px;
     }
 
@@ -320,7 +324,7 @@ header {
     --section-start-color: #0a081d;
     --section-end-color: #14081d;
 
-    h1 {
+    h2 {
         margin-bottom: 40px;
         margin-top: 10px;
         font-size: 35px;
@@ -386,11 +390,16 @@ header {
 #objetivos {
     padding: 30px 50px 30px;
     --section-start-color: #14081d;
-    --section-end-color: #14081d;
+    --section-end-color: #05051a;
     color: #2c043b;
 
     h1, h2 {
         margin-bottom: 20px;
+    }
+
+    > h2 {
+        font-size: 2em;
+        margin-top: 0.67em;
     }
 
     .content {
@@ -999,7 +1008,7 @@ dialog.member-profile::backdrop {
             max-width: 360px;
         }
 
-        h1 {
+        h2 {
             font-size: 28px;
         }
 
@@ -1017,7 +1026,7 @@ dialog.member-profile::backdrop {
     }
 
     #aboutNest {
-        h1 {
+        h2 {
             font-size: 26px;
         }
 
@@ -1044,7 +1053,7 @@ dialog.member-profile::backdrop {
     #aboutUs {
         padding: 32px 16px 20px;
 
-        h1 {
+        h2 {
             margin-bottom: 28px;
             font-size: 30px;
         }
@@ -1075,7 +1084,7 @@ dialog.member-profile::backdrop {
     #objetivos {
         padding: 24px 16px;
 
-        h1 {
+        > h2 {
             font-size: 27px;
         }
 
@@ -1124,6 +1133,193 @@ dialog.member-profile::backdrop {
 
         #cright {
             grid-column: auto;
+        }
+    }
+}
+
+#devlog {
+    --section-start-color: #05051a;
+    --section-end-color: #05051a;
+    padding: 56px 32px 72px;
+
+    h2 {
+        max-width: 1120px;
+        margin: 0 auto 30px;
+        font-size: clamp(32px, 4vw, 46px);
+        letter-spacing: 0.08em;
+        padding-left: 30px;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        width: min(100%, 1120px);
+        margin: 0 auto;
+    }
+
+    .hito {
+        overflow: hidden;
+        border: 1px solid rgb(143 212 255 / 32%);
+        border-radius: 16px;
+        background: linear-gradient(135deg, rgb(22 58 99 / 96%), rgb(12 40 71 / 96%));
+        box-shadow: 0 12px 30px rgb(0 0 0 / 24%);
+    }
+
+    .hito[open] {
+        border-color: #5ec7ff;
+        box-shadow: 0 16px 38px rgb(0 0 0 / 36%);
+    }
+
+    .hito summary {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 23px 30px;
+        color: #eef0ff;
+        cursor: pointer;
+        font-size: clamp(20px, 2.5vw, 28px);
+        font-weight: 750;
+        letter-spacing: 0.06em;
+        list-style: none;
+    }
+
+    .hito summary::-webkit-details-marker {
+        display: none;
+    }
+
+    .hito summary::after {
+        content: "+";
+        display: grid;
+        width: 34px;
+        height: 34px;
+        flex: 0 0 34px;
+        place-items: center;
+        border: 1px solid rgb(143 212 255 / 55%);
+        border-radius: 50%;
+        color: #8fd4ff;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 1;
+    }
+
+    .hito[open] summary {
+        background: rgb(94 199 255 / 10%);
+    }
+
+    .hito[open] summary::after {
+        content: "−";
+    }
+
+    .hito-imagenes {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px;
+        padding: 30px 32px 26px;
+
+        .left,
+        .right {
+            min-width: 0;
+        }
+
+        h2 {
+            margin-bottom: 12px;
+            color: #8fd4ff;
+            font-size: 20px;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border: 1px solid rgb(255 255 255 / 14%);
+            border-radius: 10px;
+            object-fit: cover;
+        }
+    }
+
+    hr {
+        margin: 0 32px;
+        border: 0;
+        border-top: 1px solid rgb(143 212 255 / 30%);
+    }
+
+    .hito-lista {
+        padding: 22px 32px 30px;
+
+        ul {
+            display: grid;
+            gap: 12px;
+            padding-left: 22px;
+        }
+
+        li {
+            padding-left: 4px;
+            line-height: 1.6;
+        }
+
+        li::marker {
+            color: #5ec7ff;
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    #devlog {
+        padding: 42px 24px 54px;
+
+        h2 {
+            margin-bottom: 22px;
+        }
+
+        .hito summary {
+            padding: 19px 22px;
+        }
+
+        .hito-imagenes {
+            gap: 16px;
+            padding: 24px 22px;
+
+            h2 {
+                font-size: 17px;
+            }
+        }
+
+        hr {
+            margin: 0 22px;
+        }
+
+        .hito-lista {
+            padding: 20px 22px 24px;
+        }
+    }
+}
+
+@media (max-width: 520px) {
+    #devlog {
+        padding: 34px 16px 44px;
+
+        .hito-imagenes {
+            grid-template-columns: minmax(0, 1fr);
+            gap: 20px;
+            padding: 22px 18px;
+
+            img {
+                aspect-ratio: 16 / 10;
+            }
+        }
+
+        .hito summary {
+            padding: 17px 18px;
+        }
+
+        hr {
+            margin: 0 18px;
+        }
+
+        .hito-lista {
+            padding: 18px 18px 22px;
         }
     }
 }

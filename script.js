@@ -1,5 +1,6 @@
 const screenshots = document.getElementById("screenshots");
 const similarGames = document.querySelector(".juegos-similares");
+const devlog = document.getElementById("devlog");
 const artZoomOverlay = document.getElementById("art_zoom_overlay");
 const artZoomImg = document.getElementById("art_zoom_img");
 const header = document.querySelector("header");
@@ -97,6 +98,7 @@ const openArtZoom = (e) => {
 
 screenshots.addEventListener("click", openArtZoom);
 similarGames.addEventListener("click", openArtZoom);
+devlog.addEventListener("click", openArtZoom);
 
 artZoomOverlay.addEventListener("click", () => {
     artZoomOverlay.classList.remove("active");
