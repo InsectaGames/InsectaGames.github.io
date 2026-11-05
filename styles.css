@@ -349,7 +349,7 @@ header {
         position: relative;
         cursor: url("images/mouse/pointer.png"), pointer;
         font: inherit;
-        transition: top 0.2s ease, filter 0.2s ease;
+        transition: translate 0.2s ease, filter 0.2s ease;
 
         img {
             width: 100%;
@@ -369,7 +369,7 @@ header {
     }
 
     .member:hover {
-        top: -4px;
+        translate: 0 -4px;
         filter: drop-shadow(0 9px 20px rgb(0 0 0 / 30%));
     }
 
@@ -421,6 +421,7 @@ header {
         font: inherit;
         font-size: 20px;
         cursor: url("images/mouse/pointer.png"), pointer;
+        transition: translate 0.2s ease, filter 0.2s ease;
     }
 
     .project-card img {
@@ -432,7 +433,7 @@ header {
     }
 
     .project-card:hover {
-        transform: translateY(-4px);
+        translate: 0 -4px;
         filter: drop-shadow(0 9px 20px rgb(0 0 0 / 30%));
     }
 
@@ -768,7 +769,12 @@ dialog.member-profile::backdrop {
     margin-left: auto;
     padding: 8px 14px;
     border-radius: 12px;
+    background-color: #163a63;
     font-size: 22px;
+}
+
+.project-profile-content .play-link:hover {
+    background-color: #0c2847;
 }
 
 @media (max-width: 560px) {
