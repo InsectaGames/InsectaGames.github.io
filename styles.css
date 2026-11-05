@@ -584,6 +584,8 @@ footer {
         display: flex;
         flex-direction: column;
         margin-right: auto;
+        padding-left: 20px;
+        padding-top: 10px;
 
         a {
             text-decoration: none;
@@ -595,6 +597,8 @@ footer {
         flex-direction: column;
         align-items: center;
         margin-left: auto;
+        padding-right: 20px;
+        padding-top: 10px;
     }
 
     img {
@@ -693,6 +697,7 @@ dialog.member-profile::backdrop {
     color: white;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     text-decoration: none;
+    cursor: url("images/mouse/pointer.png"), pointer;
     transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -1022,10 +1027,19 @@ dialog.member-profile::backdrop {
         .left,
         .right {
             margin: 0;
+            padding: 0;
+            align-items: center;
         }
 
-        .right {
-            align-items: flex-start;
+        .left a {
+            overflow-wrap: anywhere;
+        }
+
+        .right > div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
         }
     }
 }
@@ -1309,10 +1323,6 @@ dialog.member-profile::backdrop {
             align-items: center;
         }
 
-        .left a {
-            overflow-wrap: anywhere;
-        }
-
         #cright {
             grid-column: auto;
         }
@@ -1360,7 +1370,7 @@ dialog.member-profile::backdrop {
         gap: 20px;
         padding: 23px 30px;
         color: #eef0ff;
-        cursor: pointer;
+        cursor: url("images/mouse/pointer.png"), pointer;
         font-size: clamp(20px, 2.5vw, 28px);
         font-weight: 750;
         letter-spacing: 0.06em;
