@@ -16,7 +16,7 @@
     <meta name="theme-color" content="#1aa54f">
     <meta property="og:title" content="Insecta Games Portfolio">
     <meta property="og:description" content="¡Bienvenidos a Insecta Games, un estudio de desarrollo de videojuegos!.">
-    <meta property="og:image" content="images/logos/logo.png">
+    <meta property="og:image" content="https://insectagames.github.io/images/logos/logo.png">
     <meta property="og:url" content="https://insectagames.github.io">
     <title>Insecta Games</title>
     <link rel="stylesheet" href="styles.css">
@@ -47,6 +47,7 @@
                 <a class="clickable" href="#aboutUs">SOBRE NOSOTROS</a>
                 <a class="clickable" href="#objetivos">OBJETIVOS</a>
                 <a class="clickable" href="#devlog">DEVLOG</a>
+                <a class="clickable" href="#habilidades">HABILIDADES</a>
             </nav>
         </div>
     </header>
@@ -481,6 +482,107 @@
                     </div>
                 </details>
             </div>
+        </section>
+
+        <section id="habilidades" class="section-gradient" aria-labelledby="skills-title">
+            <div class="skills-heading">
+                <h2 id="skills-title">HABILIDADES DEL EQUIPO</h2>
+                <p class="skills-intro">Un vistazo a los dibujos, técnicas y música que construyen nuestros mundos.</p>
+            </div>
+
+            <section class="skills-panel" id="arte" aria-labelledby="skills-art-title">
+                <div class="skills-panel-heading">
+                    <div>
+                        <h3 id="skills-art-title">Nuestro Arte</h3>
+                    </div>
+                    <p>Un estilo simple, amigable y con colores suaves. ¡En Insecta Games queremos que nuestro arte te invite a jugar!</p>
+                </div>
+
+                <div class="skills-art-grid">
+                    <article class="skills-art-card">
+                        <div class="skills-art-images">
+                            <img class="clickable" src="images/skills/babosa.png" draggable="false" alt="Render de la Babosa Recolectora">
+                        </div>
+                        <p>Personajes</p>
+                    </article>
+                    <article class="skills-art-card">
+                        <div class="skills-art-images">
+                            <img class="skills-art-landscape clickable" src="images/skills/bg_forest.jpeg" draggable="false" alt="Escenario del bosque de Nest Invaders">
+                        </div>
+                        <p>Escenarios</p>
+                    </article>
+                    <article class="skills-art-card">
+                        <div class="skills-art-images">
+                            <img class="clickable" src="images/skills/arañaOgro.png" draggable="false" alt="Concept de la Araña Ogro">
+                        </div>
+                        <p>Bocetos y conceptos</p>
+                    </article>
+                    <article class="skills-art-card">
+                        <div class="skills-art-images">
+                            <img class="clickable" src="images/skills/ui.png" draggable="false" alt="Render de la interfaz de Nest Invaders">
+                        </div>
+                        <p>Interfaz de usuario</p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="skills-panel skills-code-panel" id="programacion" aria-labelledby="skills-code-title">
+                <div class="skills-panel-heading">
+                    <div>
+                        <h3 id="skills-code-title">Programación</h3>
+                    </div>
+                    <p>Un ejemplo de los sistemas que se han tenido que implementar para el funcionamiento del juego.</p>
+                </div>
+
+                <div class="skills-code-card">
+                    <div class="navmesh-visual">
+                        <img class="clickable" src="images/skills/bg_forest.jpeg" draggable="false" alt="Ejemplo de NavMesh visual en 2D">
+                    </div>
+
+                    <div class="skills-code-copy">
+                        <p class="skills-code-lead">NavMesh 2D en Unity</p>
+                        <p>EXPLICAR BIEN AUN En 2D, una malla de navegación describe por dónde se puede caminar. La unidad consulta esa superficie y calcula una ruta hacia su destino, rodeando los obstáculos en lugar de cruzarlos.</p>
+                        <ol class="navmesh-steps">
+                            <li><span>01</span><div><b>Definir</b><p>Se señalan las áreas transitables y los obstáculos.</p></div></li>
+                            <li><span>02</span><div><b>Calcular</b><p>El sistema encuentra un camino posible hasta el objetivo.</p></div></li>
+                            <li><span>03</span><div><b>Seguir</b><p>La unidad recorre la ruta y puede actualizarla si cambia el destino.</p></div></li>
+                        </ol>
+                        <p class="skills-code-note">NavMesh · Unity · 2D</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="skills-panel" id="musica" aria-labelledby="skills-music-title">
+                <div class="skills-panel-heading">
+                    <div>
+                        <h3 id="skills-music-title">Música</h3>
+                    </div>
+                    <p>Un adelanto de la música de Nest Invaders.</p>
+                </div>
+
+                <div class="skills-music-card">
+                    <div class="music-art" aria-hidden="true">
+                        <span class="music-art-orbit"></span>
+                        <span class="music-art-note">♫</span>
+                        <span class="music-art-label">NEST<br>INVADERS</span>
+                    </div>
+                    <div class="music-details">
+                        <p class="skills-eyebrow">BANDA SONORA ORIGINAL</p>
+                        <h4 id="music-track-title">Tema Primavera</h4>
+                        <p class="music-track-meta">Nest Invaders <span aria-hidden="true">·</span> Insecta Games</p>
+                        <div class="music-player" aria-label="Reproductor de música pendiente">
+                            <button type="button" disabled aria-label="Reproducción disponible próximamente">▶</button>
+                            <div class="music-timeline">
+                                <div class="music-waveform" aria-hidden="true">
+                                    <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                                </div>
+                                <div class="music-time"><span>00:00</span><span>PRÓXIMAMENTE</span></div>
+                            </div>
+                        </div>
+                        <p class="music-placeholder-note">El reproductor estará disponible cuando añadamos la canción.</p>
+                    </div>
+                </div>
+            </section>
         </section>
     </main>
 

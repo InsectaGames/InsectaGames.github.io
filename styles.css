@@ -41,6 +41,14 @@ header {
             font-size: 30px;
         }
 
+        a:last-child {
+            text-decoration: none;
+        }
+
+        a:last-child:hover p {
+            color: rgb(0, 0, 0);
+        }
+
         img {
             height: 50px
         }
@@ -301,7 +309,9 @@ header {
 
 @media (hover: hover) {
     #aboutNest #screenshots img:hover,
-    #devlog .hito-imagenes img:hover {
+    #devlog .hito-imagenes img:hover,
+    #habilidades .skills-art-images img:hover,
+    #habilidades .navmesh-visual img:hover {
         z-index: 1;
         transform: scale(1.05);
         filter: drop-shadow(0 6px 10px rgb(0 0 0 / 35%));
@@ -312,7 +322,11 @@ header {
     #aboutNest #screenshots img,
     #aboutNest #screenshots img:hover,
     #devlog .hito-imagenes img,
-    #devlog .hito-imagenes img:hover {
+    #devlog .hito-imagenes img:hover,
+    #habilidades .skills-art-images img,
+    #habilidades .skills-art-images img:hover,
+    #habilidades .navmesh-visual img,
+    #habilidades .navmesh-visual img:hover {
         transition: none;
         transform: none;
         filter: none;
@@ -1520,6 +1534,440 @@ dialog.member-profile::backdrop {
         .hito-lista {
             padding: 18px 18px 22px;
         }
+    }
+}
+
+#habilidades {
+    --section-start-color: #05051a;
+    --section-end-color: #081b25;
+    padding: 62px 32px 76px;
+}
+
+.skills-heading,
+.skills-panel {
+    box-sizing: border-box;
+    width: min(100%, 1120px);
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.skills-heading {
+    margin-bottom: 42px;
+    text-align: center;
+}
+
+.skills-eyebrow {
+    margin-bottom: 10px;
+    color: #78e2ad;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+}
+
+.skills-heading h2 {
+    margin-bottom: 12px;
+    font-size: clamp(30px, 4vw, 46px);
+    letter-spacing: 0.08em;
+}
+
+.skills-intro {
+    max-width: 620px;
+    margin: 0 auto;
+    color: #c1ccda;
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+.skills-panel {
+    margin-top: 28px;
+    padding: clamp(22px, 4vw, 38px);
+    border: 1px solid rgb(143 212 255 / 18%);
+    border-radius: 20px;
+    background: linear-gradient(140deg, rgb(15 36 52 / 96%), rgb(10 20 40 / 96%));
+    box-shadow: 0 16px 38px rgb(0 0 0 / 20%);
+}
+
+.skills-panel-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.skills-panel-heading .skills-eyebrow {
+    margin-bottom: 7px;
+}
+
+.skills-panel-heading h3 {
+    font-size: clamp(23px, 3vw, 30px);
+}
+
+.skills-panel-heading > p {
+    max-width: 420px;
+    color: #c1ccda;
+    line-height: 1.55;
+}
+
+.skills-art-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px 24px;
+}
+
+.skills-art-card {
+    min-width: 0;
+}
+
+.skills-art-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr));
+    gap: 14px;
+}
+
+.skills-art-images img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: contain;
+}
+
+.skills-art-images .skills-art-landscape {
+    object-fit: cover;
+}
+
+.skills-art-card > p {
+    margin-top: 11px;
+    color: #d7e3ed;
+    font-size: 14px;
+    font-weight: 650;
+}
+
+.skills-code-panel {
+    border-color: rgb(120 226 173 / 24%);
+    background: linear-gradient(140deg, rgb(13 39 45 / 97%), rgb(10 24 39 / 97%));
+}
+
+.skills-code-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+    gap: clamp(24px, 4vw, 42px);
+    align-items: center;
+}
+
+.navmesh-visual {
+    min-width: 0;
+}
+
+.navmesh-visual svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.navmesh-visual img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.navmesh-caption {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 5px 2px;
+    color: #aebdca;
+    font-size: 12px;
+}
+
+.navmesh-caption span {
+    width: 8px;
+    height: 8px;
+    flex: 0 0 8px;
+    border-radius: 50%;
+    background: #78e2ad;
+}
+
+.skills-code-lead {
+    margin-bottom: 10px;
+    color: #eaf7ff;
+    font-size: 20px;
+    font-weight: 750;
+}
+
+.skills-code-copy > p:not(.skills-code-lead, .skills-code-note) {
+    color: #c1ccda;
+    line-height: 1.65;
+}
+
+.navmesh-steps {
+    display: grid;
+    gap: 17px;
+    margin: 22px 0 18px;
+    padding: 0;
+    list-style: none;
+}
+
+.navmesh-steps li {
+    display: flex;
+    align-items: start;
+    gap: 13px;
+}
+
+.navmesh-steps li > span {
+    display: grid;
+    width: 30px;
+    height: 30px;
+    flex: 0 0 30px;
+    place-items: center;
+    border: 1px solid rgb(120 226 173 / 45%);
+    border-radius: 50%;
+    color: #9af0c1;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.navmesh-steps b {
+    display: block;
+    margin: 1px 0 3px;
+    color: #f1f7fc;
+}
+
+.navmesh-steps p {
+    color: #b8c7d3;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.skills-code-note {
+    display: inline-flex;
+    padding: 7px 11px;
+    border: 1px solid rgb(120 226 173 / 25%);
+    border-radius: 999px;
+    color: #aaf0c8;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.skills-music-card {
+    display: grid;
+    grid-template-columns: 180px minmax(0, 1fr);
+    gap: 26px;
+    align-items: center;
+    padding: clamp(18px, 3vw, 28px);
+    border: 1px solid rgb(143 212 255 / 20%);
+    border-radius: 17px;
+    background: linear-gradient(115deg, rgb(22 58 99 / 64%), rgb(15 30 55 / 78%));
+}
+
+.music-art {
+    position: relative;
+    display: grid;
+    width: 100%;
+    aspect-ratio: 1;
+    place-items: center;
+    overflow: hidden;
+    border: 1px solid rgb(143 212 255 / 30%);
+    border-radius: 14px;
+    background: radial-gradient(circle at 50% 45%, #35556c, #17223b 67%, #10172b);
+}
+
+.music-art-orbit {
+    position: absolute;
+    width: 72%;
+    aspect-ratio: 1;
+    border: 1px solid rgb(143 212 255 / 26%);
+    border-radius: 50%;
+    box-shadow: 0 0 34px rgb(143 212 255 / 12%), inset 0 0 30px rgb(143 212 255 / 9%);
+}
+
+.music-art-note {
+    position: relative;
+    margin-top: -18px;
+    color: #a9eaff;
+    font-size: 66px;
+    text-shadow: 0 0 28px rgb(94 199 255 / 50%);
+}
+
+.music-art-label {
+    position: absolute;
+    bottom: 17px;
+    color: rgb(232 244 255 / 76%);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.24em;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.music-details {
+    min-width: 0;
+}
+
+.music-details .skills-eyebrow {
+    color: #8fd4ff;
+}
+
+.music-details h4 {
+    margin-bottom: 5px;
+    font-size: clamp(22px, 3vw, 30px);
+}
+
+.music-track-meta {
+    color: #c1ccda;
+    font-size: 14px;
+}
+
+.music-player {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 22px;
+}
+
+.music-player button {
+    display: grid;
+    width: 44px;
+    height: 44px;
+    flex: 0 0 44px;
+    place-items: center;
+    border: 1px solid rgb(143 212 255 / 30%);
+    border-radius: 50%;
+    background: rgb(143 212 255 / 9%);
+    color: #a9eaff;
+    font-size: 15px;
+    opacity: 0.65;
+}
+
+.music-timeline {
+    min-width: 0;
+    flex: 1;
+}
+
+.music-waveform {
+    display: flex;
+    height: 30px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3px;
+    overflow: hidden;
+}
+
+.music-waveform span {
+    width: 3px;
+    min-width: 2px;
+    height: 30%;
+    border-radius: 5px;
+    background: #74c8ed;
+    opacity: 0.7;
+}
+
+.music-waveform span:nth-child(4n + 1) { height: 65%; }
+.music-waveform span:nth-child(5n + 2) { height: 90%; }
+.music-waveform span:nth-child(3n) { height: 45%; }
+.music-waveform span:nth-child(7n) { height: 100%; }
+
+.music-time {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 6px;
+    color: #b8c7d3;
+    font-size: 11px;
+    font-variant-numeric: tabular-nums;
+}
+
+.music-placeholder-note {
+    margin-top: 13px;
+    color: #aebdca;
+    font-size: 12px;
+}
+
+@media (max-width: 850px) {
+    #habilidades {
+        padding: 48px 24px 58px;
+    }
+
+    .skills-code-card {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+@media (max-width: 560px) {
+    #habilidades {
+        padding: 38px 16px 46px;
+    }
+
+    .skills-heading {
+        margin-bottom: 30px;
+    }
+
+    .skills-intro {
+        font-size: 15px;
+    }
+
+    .skills-panel {
+        margin-top: 18px;
+        padding: 20px 16px;
+        border-radius: 16px;
+    }
+
+    .skills-panel-heading {
+        align-items: start;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 19px;
+    }
+
+    .skills-panel-heading > p {
+        font-size: 14px;
+    }
+
+    .skills-art-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 24px;
+    }
+
+    .skills-art-card > p {
+        margin-top: 8px;
+        font-size: 12px;
+    }
+
+    .navmesh-caption {
+        font-size: 10px;
+    }
+
+    .skills-code-lead {
+        font-size: 18px;
+    }
+
+    .skills-music-card {
+        grid-template-columns: minmax(0, 1fr);
+        justify-items: center;
+        gap: 20px;
+        padding: 18px;
+        text-align: center;
+    }
+
+    .music-art {
+        width: min(100%, 190px);
+    }
+
+    .music-details {
+        width: 100%;
+    }
+
+    .music-player {
+        gap: 10px;
+        text-align: left;
+    }
+
+    .music-waveform {
+        gap: 2px;
+    }
+
+    .music-time {
+        font-size: 9px;
     }
 }
 
