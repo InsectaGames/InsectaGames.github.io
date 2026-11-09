@@ -536,16 +536,16 @@
 
                 <div class="skills-code-card">
                     <div class="navmesh-visual">
-                        <img class="clickable" src="images/skills/bg_forest.jpeg" draggable="false" alt="Ejemplo de NavMesh visual en 2D">
+                        <img class="clickable" src="images/skills/navMesh.png" draggable="false" alt="Ejemplo de NavMesh visual en 2D">
                     </div>
 
                     <div class="skills-code-copy">
                         <p class="skills-code-lead">NavMesh 2D en Unity</p>
-                        <p>EXPLICAR BIEN AUN En 2D, una malla de navegación describe por dónde se puede caminar. La unidad consulta esa superficie y calcula una ruta hacia su destino, rodeando los obstáculos en lugar de cruzarlos.</p>
+                        <p>Hemos utilizado una malla de navegación aplicada a un mapa 2D, la cual varía y se recalcula dependiendo de la posición dinámica de los obstáculos del escenario.</p>
                         <ol class="navmesh-steps">
-                            <li><span>01</span><div><b>Definir</b><p>Se señalan las áreas transitables y los obstáculos.</p></div></li>
-                            <li><span>02</span><div><b>Calcular</b><p>El sistema encuentra un camino posible hasta el objetivo.</p></div></li>
-                            <li><span>03</span><div><b>Seguir</b><p>La unidad recorre la ruta y puede actualizarla si cambia el destino.</p></div></li>
+                            <li><span>01</span><div><b>Generación</b><p>Se crea la malla base.</p></div></li>
+                            <li><span>02</span><div><b>Obstáculos</b><p>Se generan obstáculos dinámicamente.</p></div></li>
+                            <li><span>03</span><div><b>Recalcular</b><p>Se recalcula la malla según los obstáculos generados.</p></div></li>
                         </ol>
                         <p class="skills-code-note">NavMesh · Unity · 2D</p>
                     </div>
@@ -567,19 +567,13 @@
                         <span class="music-art-label">NEST<br>INVADERS</span>
                     </div>
                     <div class="music-details">
-                        <p class="skills-eyebrow">BANDA SONORA ORIGINAL</p>
-                        <h4 id="music-track-title">Tema Primavera</h4>
+                        <p class="skills-eyebrow">BANDA SONORA</p>
+                        <h4 id="music-track-title">Tema de Día</h4>
                         <p class="music-track-meta">Nest Invaders <span aria-hidden="true">·</span> Insecta Games</p>
-                        <div class="music-player" aria-label="Reproductor de música pendiente">
-                            <button type="button" disabled aria-label="Reproducción disponible próximamente">▶</button>
-                            <div class="music-timeline">
-                                <div class="music-waveform" aria-hidden="true">
-                                    <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-                                </div>
-                                <div class="music-time"><span>00:00</span><span>PRÓXIMAMENTE</span></div>
-                            </div>
-                        </div>
-                        <p class="music-placeholder-note">El reproductor estará disponible cuando añadamos la canción.</p>
+                        <audio class="music-audio" controls preload="metadata"
+                            aria-label="Reproducir Tema Primavera">
+                            <source src="images/songs/DayTheme.mp3" type="audio/mpeg">
+                        </audio>
                     </div>
                 </div>
             </section>
