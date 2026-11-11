@@ -148,13 +148,6 @@ header {
     padding: 50px;
     padding-bottom: 30px;
 
-    h2 {
-        font-size: 2em;
-        margin-bottom: 0.67em;
-        margin-top: 40px;
-        text-align: left;
-    }
-
     .content {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -166,23 +159,49 @@ header {
         align-items: center;
         justify-content: center;
 
-        p {
-            font-size: 25px;
-            margin-top: 20px;
+        h2 {
+            margin: 0;
+            font-size: clamp(2rem, 4vw, 3rem);
+            line-height: 1.1;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
         }
 
-        .game-tags {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 8px;
-            margin-top: 20px;
+        .game-subtitle {
+            margin: 12px 0 24px;
+            font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+            font-weight: bold;
+        }
 
-            span {
-                padding: 5px 10px;
-                border-radius: 12px;
-                background-color: rgba(25, 75, 35, 0.7);
-                font-size: 14px;
+        #caracteristicas {
+            width: min(100%, 440px);
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            background: rgba(6, 22, 15, 0.8);
+            font-size: 18px;
+            text-align: left;
+
+            p {
+                margin: 10px 0;
+            }
+
+            ul {
+                margin: 0 0 16px;
+                padding-left: 24px;
+                list-style: square;
+            }
+
+            > div {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+
+            img {
+                width: auto;
+                height: 55px;
+                padding: 8px;
+                margin: 0;
             }
         }
     }
@@ -215,7 +234,6 @@ header {
         aspect-ratio: 16 / 9;
         margin: 15px auto 0;
     }
-
 }
 
 /* Ajuste de la sección del juego */
@@ -275,39 +293,74 @@ header {
 
         #gameInfo {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+            gap: 32px;
+            align-items: center;
 
             #screenshots {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
+                position: relative;
+                min-width: 0;
+                overflow: hidden;
+                border-radius: 16px;
+                background: rgba(0, 0, 0, 0.3);
 
                 #gameplayShowcase {
-                    height: fit-content;
+                    display: block;
+                    width: 100%;
+                    max-height: 480px;
+                    padding: 0;
+                    object-fit: contain;
                 }
 
-                img {
-                    height: 90px;
-                    padding: 10px;
-                    position: relative;
-                    transition: transform 0.2s ease, filter 0.2s ease;
+                .screenshot-arrow {
+                    position: absolute;
+                    z-index: 1;
+                    top: 50%;
+                    display: grid;
+                    width: 48px;
+                    height: 64px;
+                    padding: 0;
+                    place-items: center;
+                    border: 1px solid rgba(255, 255, 255, 0.25);
+                    border-radius: 12px;
+                    background: rgba(5, 25, 16, 0.8);
+                    font-size: 42px;
+                    line-height: 1;
+                    transform: translateY(-50%);
+                    cursor: pointer;
+
+                    &:hover {
+                        background: #2f7e0d;
+                    }
+
+                    &:focus-visible {
+                        outline: 3px solid #fff;
+                        outline-offset: 3px;
+                    }
+                }
+
+                .previous {
+                    left: 12px;
+                }
+
+                .next {
+                    right: 12px;
                 }
             }
 
-            #caracteristicas {
-                padding: 20px;
-                font-size: 20px;
+            #gameDescription {
+                padding: 28px;
+                border: 1px solid rgba(255, 255, 255, 0.18);
+                border-radius: 16px;
+                background: rgba(6, 22, 15, 0.72);
 
-                img {
-                    height: 55px;
-                    padding: 10px;
+                h3 {
+                    margin-bottom: 14px;
+                    font-size: clamp(1.5rem, 2.5vw, 2rem);
                 }
 
                 p {
-                    margin-top: 10px;
-                }
-
-                ul {
-                    list-style: square;
+                    line-height: 1.6;
                 }
             }
         }
@@ -1513,25 +1566,17 @@ dialog.member-profile::backdrop {
                 grid-template-columns: minmax(0, 1fr);
                 gap: 24px;
 
-                #screenshots {
-                    grid-template-columns: minmax(0, 1fr);
+                #gameInfo {
+                    gap: 20px;
 
-                    #gameplayShowcase {
-                        width: 100%;
-                        max-height: 360px;
-                        object-fit: contain;
+                    #screenshots .screenshot-arrow {
+                        width: 42px;
+                        height: 54px;
+                        font-size: 36px;
                     }
 
-                    > div {
-                        display: grid;
-                        grid-template-columns: repeat(3, minmax(0, 1fr));
-                    }
-
-                    > div img {
-                        width: 100%;
-                        height: clamp(56px, 18vw, 90px);
-                        padding: 6px;
-                        object-fit: cover;
+                    #gameDescription {
+                        padding: 22px;
                     }
                 }
             }
@@ -1744,24 +1789,14 @@ dialog.member-profile::backdrop {
     #nest-invaders {
         padding: 32px 16px 24px;
 
-        .left img {
-            width: 90%;
-            max-width: 360px;
-        }
+        .left {
+            .game-subtitle {
+                font-size: 21px;
+            }
 
-        h2 {
-            font-size: 28px;
-        }
-
-        .left p {
-            font-size: 21px;
-        }
-
-        .left .game-tags {
-            gap: 6px;
-
-            span {
-                font-size: 12px;
+            #caracteristicas {
+                padding: 16px;
+                font-size: 17px;
             }
         }
     }
@@ -1774,18 +1809,19 @@ dialog.member-profile::backdrop {
         .content {
             padding: 24px 16px 10px;
 
-            p,
-            #gameInfo #caracteristicas,
-            #gameInfo #caracteristicas p {
+            p {
                 font-size: 17px;
             }
 
-            #gameInfo #caracteristicas {
-                padding: 10px;
+            #gameDescription {
+                padding: 18px;
 
-                img {
-                    height: 48px;
-                    padding: 6px;
+                h3 {
+                    font-size: 22px;
+                }
+
+                p {
+                    font-size: 17px;
                 }
             }
         }

@@ -1,4 +1,8 @@
 const screenshots = document.getElementById("screenshots");
+const gameplayShowcase = document.getElementById("gameplayShowcase");
+const screenshotPrevious = screenshots.querySelector(".screenshot-arrow.previous");
+const screenshotNext = screenshots.querySelector(".screenshot-arrow.next");
+const gameDescription = document.getElementById("gameDescription");
 const similarGames = document.querySelector(".juegos-similares");
 const devlog = document.getElementById("devlog");
 const skills = document.getElementById("habilidades");
@@ -8,6 +12,54 @@ const header = document.querySelector("header");
 const menuToggle = header.querySelector(".menu-toggle");
 const navigation = header.querySelector("#main-navigation");
 const mobileNavigationQuery = window.matchMedia("(max-width: 1100px)");
+
+if (!(gameplayShowcase instanceof HTMLImageElement) ||
+    !(screenshotPrevious instanceof HTMLButtonElement) ||
+    !(screenshotNext instanceof HTMLButtonElement) ||
+    !(gameDescription instanceof HTMLDivElement)) {
+    throw new Error("No se pudo inicializar el carrusel de imágenes de Nest Invaders.");
+}
+
+const gameSlides = [
+    {
+        src: "images/screenshots/gameplay.gif",
+        alt: "Gameplay de Nest Invaders",
+        title: "Una colmena en peligro",
+        description: "Explora el campo de batalla, reúne recursos y prepara tus defensas antes de que avance la amenaza enemiga."
+    },
+    {
+        src: "images/screenshots/screenshot_1.png",
+        alt: "Captura de pantalla de Nest Invaders",
+        title: "Planifica tu estrategia",
+        description: "Cada decisión cuenta: distribuye tus unidades con cabeza y encuentra el momento ideal para atacar."
+    },
+    {
+        src: "images/screenshots/screenshot_2.png",
+        alt: "Captura de pantalla de Nest Invaders durante una batalla",
+        title: "Defiende tu territorio",
+        description: "Refuerza los puntos vulnerables de la colmena y resiste las oleadas que intentan abrirse paso."
+    },
+    {
+        src: "images/screenshots/screenshot_3.png",
+        alt: "Captura de pantalla del mundo de Nest Invaders",
+        title: "Conquista el reino insecto",
+        description: "Avanza por un mundo lleno de rivales y lleva a tu colonia hasta la victoria."
+    }
+];
+
+let activeGameSlide = 0;
+const showGameSlide = (index) => {
+    activeGameSlide = (index + gameSlides.length) % gameSlides.length;
+    const slide = gameSlides[activeGameSlide];
+
+    gameplayShowcase.src = slide.src;
+    gameplayShowcase.alt = slide.alt;
+    gameDescription.querySelector("h3").textContent = slide.title;
+    gameDescription.querySelector("p").textContent = slide.description;
+};
+
+screenshotPrevious.addEventListener("click", () => showGameSlide(activeGameSlide - 1));
+screenshotNext.addEventListener("click", () => showGameSlide(activeGameSlide + 1));
 
 const setNavigationOpen = (isOpen, returnFocus = false) => {
     navigation.classList.toggle("is-open", isOpen);
