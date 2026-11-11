@@ -559,16 +559,6 @@ header {
             margin-bottom: 16px;
         }
 
-        img {
-            width: 100%;
-            max-width: none;
-            aspect-ratio: 16 / 9;
-            object-fit: cover;
-            display: block;
-            margin: 0;
-            transition: transform 0.25s ease;
-        }
-
         .grid {
             display: grid;
             width: 100%;
@@ -576,31 +566,75 @@ header {
             gap: clamp(10px, 2vw, 20px);
         }
 
-        .grid > div {
+        .grid > .referencia-card {
             min-width: 0;
-            overflow: hidden;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 16 / 9;
+            padding: 0;
+            outline-offset: 4px;
+        }
+
+        #objetivos .juegos-similares .referencia-card {
+            max-width: none;
+            margin: 0;
+            aspect-ratio: 16 / 9;
+        }
+
+        .referencia-card .carta {
             border: 1px solid rgb(255 255 255 / 22%);
             border-radius: 12px;
-            background: #0c6da9;
             box-shadow: 0 5px 14px rgb(0 0 0 / 20%);
         }
 
-        .grid > div:hover {
-            transform: translateY(-4px);
+        .referencia-card:hover .carta,
+        .referencia-card:focus .carta {
             box-shadow: 0 9px 20px rgb(0 0 0 / 30%);
         }
 
-        .grid h3 {
-            display: grid;
-            min-height: 48px;
-            padding: 8px;
-            place-items: center;
-            font-size: clamp(15px, 1.5vw, 19px);
-            line-height: 1.25;
+        .referencia-card .frente {
+            display: block;
+            overflow: hidden;
+            padding: 0;
+            background: #0c6da9;
+
+            img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            h3 {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                padding: 8px;
+                background: rgb(5 5 26 / 78%);
+                font-size: clamp(14px, 1.5vw, 19px);
+                line-height: 1.25;
+            }
         }
 
-        .grid > div:hover img {
-            transform: scale(1.04);
+        .referencia-card .dorso {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            overflow-y: auto;
+            padding: clamp(10px, 1.4vw, 18px);
+            font-size: clamp(12px, 1.2vw, 16px);
+
+            h3 {
+                margin-bottom: 8px;
+                font-size: clamp(14px, 1.5vw, 19px);
+                line-height: 1.25;
+            }
+
+            p {
+                margin: 0;
+                line-height: 1.4;
+            }
         }
     }
 
@@ -619,6 +653,9 @@ header {
     }
     .escena:hover .carta { 
         transform: rotateY(180deg); 
+    }
+    .escena:focus .carta {
+        transform: rotateY(180deg);
     }
     .cara { 
         position: absolute; 
@@ -919,20 +956,61 @@ header {
 }
 
 .skills-art-images {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr));
-    gap: 14px;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    padding: 10px;
+    border: 1px solid rgb(255 255 255 / 18%);
+    border-radius: 12px;
+    background: linear-gradient(145deg, rgb(20 38 53 / 90%), rgb(8 20 31 / 90%));
 }
 
 .skills-art-images img {
+    box-sizing: border-box;
     display: block;
     width: 100%;
     aspect-ratio: 4 / 3;
     object-fit: contain;
+    border-radius: 8px;
 }
 
 .skills-art-images .skills-art-landscape {
     object-fit: cover;
+}
+
+.skills-art-images .art-gallery-arrow {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    display: grid;
+    width: 40px;
+    height: 52px;
+    padding: 0;
+    place-items: center;
+    border: 1px solid rgb(255 255 255 / 28%);
+    border-radius: 10px;
+    background: rgb(5 25 16 / 82%);
+    font-size: 34px;
+    line-height: 1;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.skills-art-images .art-gallery-arrow:hover {
+    background: #2f7e0d;
+}
+
+.skills-art-images .art-gallery-arrow:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: -3px;
+}
+
+.skills-art-images .previous {
+    left: 16px;
+}
+
+.skills-art-images .next {
+    right: 16px;
 }
 
 .skills-art-card > p {
@@ -1145,6 +1223,12 @@ header {
     .skills-art-grid {
         grid-template-columns: minmax(0, 1fr);
         gap: 24px;
+    }
+
+    .skills-art-images .art-gallery-arrow {
+        width: 44px;
+        height: 56px;
+        font-size: 36px;
     }
 
     .skills-art-card > p {

@@ -3,7 +3,6 @@ const gameplayShowcase = document.getElementById("gameplayShowcase");
 const screenshotPrevious = screenshots.querySelector(".screenshot-arrow.previous");
 const screenshotNext = screenshots.querySelector(".screenshot-arrow.next");
 const gameDescription = document.getElementById("gameDescription");
-const similarGames = document.querySelector(".juegos-similares");
 const devlog = document.getElementById("devlog");
 const skills = document.getElementById("habilidades");
 const artZoomOverlay = document.getElementById("art_zoom_overlay");
@@ -60,6 +59,52 @@ const showGameSlide = (index) => {
 
 screenshotPrevious.addEventListener("click", () => showGameSlide(activeGameSlide - 1));
 screenshotNext.addEventListener("click", () => showGameSlide(activeGameSlide + 1));
+
+const artGallerySlides = {
+    characters: [
+        { src: "images/skills/babosa.png", alt: "Render de la Babosa Recolectora" },
+        { src: "images/skills/arañaOgro.png", alt: "Concept de la Araña Ogro" },
+        { src: "images/screenshots/screenshot_1.png", alt: "Placeholder de personaje en el campo de batalla" }
+    ],
+    scenarios: [
+        { src: "images/skills/bg_forest.jpeg", alt: "Escenario del bosque de Nest Invaders" },
+        { src: "images/screenshots/screenshot_1.png", alt: "Placeholder de escenario de Nest Invaders" },
+        { src: "images/screenshots/screenshot_2.png", alt: "Placeholder de otro escenario de Nest Invaders" }
+    ],
+    concepts: [
+        { src: "images/skills/arañaOgro.png", alt: "Concept de la Araña Ogro" },
+        { src: "images/screenshots/bocetoInicial.png", alt: "Boceto inicial de Nest Invaders" },
+        { src: "images/screenshots/AlphaNestInvaders.gif", alt: "Placeholder de concepto en la etapa Alpha" }
+    ],
+    interface: [
+        { src: "images/skills/ui.png", alt: "Render de la interfaz de Nest Invaders" },
+        { src: "images/screenshots/screenshot_2.png", alt: "Placeholder de interfaz durante una partida" },
+        { src: "images/screenshots/screenshot_3.png", alt: "Placeholder de otra vista de la interfaz" }
+    ]
+};
+
+skills.querySelectorAll(".skills-art-images[data-art-gallery]").forEach((gallery) => {
+    const galleryName = gallery.dataset.artGallery;
+    const slides = artGallerySlides[galleryName];
+    const image = gallery.querySelector("img");
+    const previous = gallery.querySelector(".art-gallery-arrow.previous");
+    const next = gallery.querySelector(".art-gallery-arrow.next");
+
+    if (!slides || !(image instanceof HTMLImageElement) ||
+        !(previous instanceof HTMLButtonElement) || !(next instanceof HTMLButtonElement)) {
+        throw new Error(`No se pudo inicializar la galería de arte: ${galleryName}`);
+    }
+
+    let activeSlide = 0;
+    const showSlide = (index) => {
+        activeSlide = (index + slides.length) % slides.length;
+        image.src = slides[activeSlide].src;
+        image.alt = slides[activeSlide].alt;
+    };
+
+    previous.addEventListener("click", () => showSlide(activeSlide - 1));
+    next.addEventListener("click", () => showSlide(activeSlide + 1));
+});
 
 const setNavigationOpen = (isOpen, returnFocus = false) => {
     navigation.classList.toggle("is-open", isOpen);
@@ -172,7 +217,6 @@ const openArtZoom = (e) => {
 };
 
 screenshots.addEventListener("click", openArtZoom);
-similarGames.addEventListener("click", openArtZoom);
 devlog.addEventListener("click", openArtZoom);
 skills.addEventListener("click", openArtZoom);
 
