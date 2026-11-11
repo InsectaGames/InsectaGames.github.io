@@ -15,7 +15,7 @@
     <meta name="author" content="Angie Natalia Prieto">
     <meta name="theme-color" content="#1aa54f">
     <meta property="og:title" content="Insecta Games Portfolio">
-    <meta property="og:description" content="¡Bienvenidos a Insecta Games, un estudio de desarrollo de videojuegos!.">
+    <meta property="og:description" content="¡Bienvenidos a Insecta Games, un estudio de desarrollo de videojuegos!">
     <meta property="og:image" content="https://insectagames.github.io/images/logos/logo.png">
     <meta property="og:url" content="https://insectagames.github.io">
     <title>Insecta Games</title>
@@ -48,6 +48,7 @@
                 <a class="clickable" href="#objetivos">OBJETIVOS</a>
                 <a class="clickable" href="#devlog">DEVLOG</a>
                 <a class="clickable" href="#habilidades">HABILIDADES</a>
+                <a class="clickable" href="#contacto">CONTACTO</a>
             </nav>
         </div>
     </header>
@@ -626,6 +627,50 @@
                     </div>
                 </div>
             </section>
+        </section>
+
+        <section id="contacto" class="section-gradient" aria-labelledby="contact-title">
+            <div class="contact-panel">
+                <div class="contact-heading">
+                    <h2 id="contact-title">Contáctanos</h2>
+                    <p>¿Tienes una propuesta, una pregunta sobre Nest Invaders o simplemente quieres saludarnos?
+                        Nos encantará leerte.</p>
+                </div>
+
+                <form class="contact-form">
+                    <div class="contact-form-grid">
+                        <div class="contact-field">
+                            <label for="contact-name">Nombre</label>
+                            <input id="contact-name" name="name" type="text" autocomplete="name"
+                                placeholder="Tu nombre" required>
+                        </div>
+                        <div class="contact-field">
+                            <label for="contact-email">Correo electrónico</label>
+                            <input id="contact-email" name="email" type="email" autocomplete="email"
+                                placeholder="tu@correo.com" required>
+                        </div>
+                        <div class="contact-field contact-field-full">
+                            <label for="contact-topic">¿De qué te gustaría hablar?</label>
+                            <select id="contact-topic" name="topic">
+                                <option value="" selected>Elige un tema</option>
+                                <option value="game">Nest Invaders</option>
+                                <option value="collaboration">Colaboraciones</option>
+                                <option value="press">Prensa y eventos</option>
+                                <option value="other">Otro tema</option>
+                            </select>
+                        </div>
+                        <div class="contact-field contact-field-full">
+                            <label for="contact-message">Mensaje</label>
+                            <textarea id="contact-message" name="message" rows="5"
+                                placeholder="Cuéntanos en qué podemos ayudarte..." required></textarea>
+                        </div>
+                    </div>
+                    <div class="contact-form-footer">
+                        <p>Este formulario es una muestra y todavía no envía mensajes.</p>
+                        <button class="contact-submit" type="button" disabled>Enviar mensaje</button>
+                    </div>
+                </form>
+            </div>
         </section>
     </main>
 

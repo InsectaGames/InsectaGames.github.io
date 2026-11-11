@@ -12,6 +12,10 @@ body {
     overflow-x: hidden;
 }
 
+main > section[id] {
+    scroll-margin-top: 6rem;
+}
+
 .section-gradient {
     background: linear-gradient(to bottom, var(--section-start-color), var(--section-end-color));
 }
@@ -883,6 +887,126 @@ header {
     padding: 62px 32px 76px;
 }
 
+#contacto {
+    --section-start-color: #081b25;
+    --section-end-color: #05051a;
+    padding: 12px 32px 76px;
+}
+
+.contact-panel {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    gap: clamp(28px, 5vw, 64px);
+    width: min(100%, 1120px);
+    margin: 0 auto;
+    padding: clamp(24px, 4vw, 42px);
+    border: 1px solid rgb(143 212 255 / 18%);
+    border-radius: 20px;
+    background: linear-gradient(140deg, rgb(15 36 52 / 96%), rgb(10 20 40 / 96%));
+    box-shadow: 0 16px 38px rgb(0 0 0 / 20%);
+}
+
+.contact-heading h2 {
+    margin-bottom: 14px;
+    font-size: clamp(30px, 4vw, 42px);
+}
+
+.contact-heading > p:last-child {
+    color: #c1ccda;
+    font-size: 17px;
+    line-height: 1.65;
+}
+
+.contact-form {
+    min-width: 0;
+}
+
+.contact-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.contact-field {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.contact-field-full {
+    grid-column: 1 / -1;
+}
+
+.contact-field label {
+    color: #d7e3ed;
+    font-size: 14px;
+    font-weight: 650;
+}
+
+.contact-field input,
+.contact-field select,
+.contact-field textarea {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid rgb(143 212 255 / 25%);
+    border-radius: 10px;
+    background: rgb(5 15 29 / 78%);
+    color: #fff;
+    font: inherit;
+}
+
+.contact-field select {
+    color-scheme: dark;
+}
+
+.contact-field textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+.contact-field input::placeholder,
+.contact-field textarea::placeholder {
+    color: #9eacba;
+    opacity: 1;
+}
+
+.contact-field input:focus-visible,
+.contact-field select:focus-visible,
+.contact-field textarea:focus-visible {
+    outline: 2px solid #78e2ad;
+    outline-offset: 2px;
+}
+
+.contact-form-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.contact-form-footer p {
+    color: #c1ccda;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.contact-submit {
+    flex: 0 0 auto;
+    padding: 11px 18px;
+    border: 0;
+    border-radius: 10px;
+    background: #2f7e0d;
+    color: #fff;
+    font: inherit;
+    font-weight: 700;
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
 .skills-heading,
 .skills-panel {
     box-sizing: border-box;
@@ -1184,6 +1308,15 @@ header {
         padding: 48px 24px 58px;
     }
 
+    #contacto {
+        padding: 8px 24px 58px;
+    }
+
+    .contact-panel {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 24px;
+    }
+
     .skills-code-card {
         grid-template-columns: minmax(0, 1fr);
     }
@@ -1193,6 +1326,42 @@ header {
 @media (max-width: 560px) {
     #habilidades {
         padding: 38px 16px 46px;
+    }
+
+    #contacto {
+        padding: 0 16px 46px;
+    }
+
+    .contact-panel {
+        gap: 22px;
+        padding: 22px 18px;
+        border-radius: 16px;
+    }
+
+    .contact-heading h2 {
+        font-size: 30px;
+    }
+
+    .contact-heading > p:last-child {
+        font-size: 15px;
+    }
+
+    .contact-form-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 15px;
+    }
+
+    .contact-field-full {
+        grid-column: auto;
+    }
+
+    .contact-form-footer {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .contact-submit {
+        width: 100%;
     }
 
     .skills-heading {
@@ -1736,6 +1905,10 @@ dialog.member-profile::backdrop {
 
 /* Navegación móvil */
 @media (max-width: 1100px) {
+    main > section[id] {
+        scroll-margin-top: 5rem;
+    }
+
     header {
         align-items: center;
         flex-direction: row;
