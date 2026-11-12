@@ -12,6 +12,29 @@ const menuToggle = header.querySelector(".menu-toggle");
 const navigation = header.querySelector("#main-navigation");
 const mobileNavigationQuery = window.matchMedia("(max-width: 1100px)");
 
+const createSlideIndicators = (container, slideCount, onSelect) => {
+    const buttons = Array.from({ length: slideCount }, (_, index) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.setAttribute("aria-label", `Mostrar imagen ${index + 1}`);
+        button.addEventListener("click", () => onSelect(index));
+        container.append(button);
+        return button;
+    });
+
+    return {
+        setActiveSlide: (activeIndex) => {
+            buttons.forEach((button, index) => {
+                if (index === activeIndex) {
+                    button.setAttribute("aria-current", "true");
+                } else {
+                    button.removeAttribute("aria-current");
+                }
+            });
+        }
+    };
+};
+
 if (!(gameplayShowcase instanceof HTMLImageElement) ||
     !(screenshotPrevious instanceof HTMLButtonElement) ||
     !(screenshotNext instanceof HTMLButtonElement) ||
@@ -47,6 +70,16 @@ const gameSlides = [
 ];
 
 let activeGameSlide = 0;
+const gameIndicatorsContainer = screenshots.querySelector(".slide-indicators");
+if (!(gameIndicatorsContainer instanceof HTMLDivElement)) {
+    throw new Error("No se pudieron inicializar los indicadores del carrusel de Nest Invaders.");
+}
+
+const gameIndicators = createSlideIndicators(
+    gameIndicatorsContainer,
+    gameSlides.length,
+    (index) => showGameSlide(index)
+);
 const showGameSlide = (index) => {
     activeGameSlide = (index + gameSlides.length) % gameSlides.length;
     const slide = gameSlides[activeGameSlide];
@@ -55,8 +88,10 @@ const showGameSlide = (index) => {
     gameplayShowcase.alt = slide.alt;
     gameDescription.querySelector("h3").textContent = slide.title;
     gameDescription.querySelector("p").textContent = slide.description;
+    gameIndicators.setActiveSlide(activeGameSlide);
 };
 
+gameIndicators.setActiveSlide(activeGameSlide);
 screenshotPrevious.addEventListener("click", () => showGameSlide(activeGameSlide - 1));
 screenshotNext.addEventListener("click", () => showGameSlide(activeGameSlide + 1));
 
@@ -89,19 +124,28 @@ skills.querySelectorAll(".skills-art-images[data-art-gallery]").forEach((gallery
     const image = gallery.querySelector("img");
     const previous = gallery.querySelector(".art-gallery-arrow.previous");
     const next = gallery.querySelector(".art-gallery-arrow.next");
+    const indicatorsContainer = gallery.querySelector(".slide-indicators");
 
     if (!slides || !(image instanceof HTMLImageElement) ||
-        !(previous instanceof HTMLButtonElement) || !(next instanceof HTMLButtonElement)) {
+        !(previous instanceof HTMLButtonElement) || !(next instanceof HTMLButtonElement) ||
+        !(indicatorsContainer instanceof HTMLDivElement)) {
         throw new Error(`No se pudo inicializar la galería de arte: ${galleryName}`);
     }
 
     let activeSlide = 0;
+    const indicators = createSlideIndicators(
+        indicatorsContainer,
+        slides.length,
+        (index) => showSlide(index)
+    );
     const showSlide = (index) => {
         activeSlide = (index + slides.length) % slides.length;
         image.src = slides[activeSlide].src;
         image.alt = slides[activeSlide].alt;
+        indicators.setActiveSlide(activeSlide);
     };
 
+    indicators.setActiveSlide(activeSlide);
     previous.addEventListener("click", () => showSlide(activeSlide - 1));
     next.addEventListener("click", () => showSlide(activeSlide + 1));
 });

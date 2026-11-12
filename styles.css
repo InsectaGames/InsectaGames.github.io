@@ -1089,6 +1089,44 @@ header {
     background: linear-gradient(145deg, rgb(20 38 53 / 90%), rgb(8 20 31 / 90%));
 }
 
+.slide-indicators {
+    position: absolute;
+    z-index: 2;
+    bottom: 16px;
+    left: 50%;
+    display: flex;
+    gap: 7px;
+    padding: 7px 9px;
+    border: 1px solid rgb(255 255 255 / 24%);
+    border-radius: 999px;
+    background: rgb(5 25 16 / 82%);
+    transform: translateX(-50%);
+}
+
+.slide-indicators button {
+    box-sizing: border-box;
+    display: block;
+    flex: 0 0 10px;
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    border: 1px solid rgb(255 255 255 / 75%);
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+}
+
+.slide-indicators button[aria-current="true"] {
+    border-color: #78e2ad;
+    background: #78e2ad;
+    transform: scale(1.2);
+}
+
+.slide-indicators button:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 3px;
+}
+
 .skills-art-images img {
     box-sizing: border-box;
     display: block;
