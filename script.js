@@ -98,22 +98,22 @@ screenshotNext.addEventListener("click", () => showGameSlide(activeGameSlide + 1
 const artGallerySlides = {
     characters: [
         { src: "images/skills/babosa.png", alt: "Render de la Babosa Recolectora" },
-        { src: "images/skills/arañaOgro.png", alt: "Concept de la Araña Ogro" },
+        { src: "images/skills/babosa.gif", alt: "Gif de la babosa moviéndose" },
         { src: "images/screenshots/screenshot_1.png", alt: "Placeholder de personaje en el campo de batalla" }
     ],
     scenarios: [
         { src: "images/skills/bg_forest.jpeg", alt: "Escenario del bosque de Nest Invaders" },
-        { src: "images/screenshots/screenshot_1.png", alt: "Placeholder de escenario de Nest Invaders" },
-        { src: "images/screenshots/screenshot_2.png", alt: "Placeholder de otro escenario de Nest Invaders" }
+        { src: "images/skills/enemyBase.png", alt: "Sprite de la base enemiga" },
+        { src: "images/skills/alliedBase.png", alt: "Sprite de la base aliada" }
     ],
     concepts: [
+        { src: "images/skills/bocetos.png", alt: "Bocetos de personajes de Nest Invaders" },
         { src: "images/skills/arañaOgro.png", alt: "Concept de la Araña Ogro" },
-        { src: "images/screenshots/bocetoInicial.png", alt: "Boceto inicial de Nest Invaders" },
-        { src: "images/screenshots/AlphaNestInvaders.gif", alt: "Placeholder de concepto en la etapa Alpha" }
+        { src: "images/skills/tanqueBoceto.png", alt: "Boceto del tanque de Nest Invaders" }
     ],
     interface: [
         { src: "images/skills/ui.png", alt: "Render de la interfaz de Nest Invaders" },
-        { src: "images/screenshots/screenshot_2.png", alt: "Placeholder de interfaz durante una partida" },
+        { src: "images/skills/levelSelect.png", alt: "Interfaz de selección de niveles" },
         { src: "images/screenshots/screenshot_3.png", alt: "Placeholder de otra vista de la interfaz" }
     ]
 };
