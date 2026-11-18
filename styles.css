@@ -214,7 +214,7 @@ header {
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-end;
         width: 100%;
         min-width: 0;
     }
@@ -376,7 +376,8 @@ header {
     #aboutNest #screenshots img:hover,
     #devlog .hito-imagenes img:hover,
     #habilidades .skills-art-images img:hover,
-    #habilidades .navmesh-visual img:hover {
+    #habilidades .navmesh-visual img:hover,
+    #marketing .metrics-panel img:hover {
         z-index: 1;
         transform: scale(1.05);
         filter: drop-shadow(0 6px 10px rgb(0 0 0 / 35%));
@@ -391,7 +392,9 @@ header {
     #habilidades .skills-art-images img,
     #habilidades .skills-art-images img:hover,
     #habilidades .navmesh-visual img,
-    #habilidades .navmesh-visual img:hover {
+    #habilidades .navmesh-visual img:hover,
+    #marketing .metrics-panel img,
+    #marketing .metrics-panel img:hover {
         transition: none;
         transform: none;
         filter: none;
@@ -689,9 +692,62 @@ header {
     }
 }
 
+/* Marketing y resultados */
+#marketing {
+    --section-start-color: #05051a;
+    --section-end-color: #081b25;
+    padding: 56px 32px 72px;
+
+    > h2 {
+        max-width: 1120px;
+        margin: 0 auto 30px;
+        padding-left: 30px;
+        font-size: clamp(32px, 4vw, 46px);
+        letter-spacing: 0.08em;
+    }
+
+    .metrics-panel {
+        display: grid;
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+        align-items: center;
+        gap: clamp(24px, 4vw, 48px);
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: clamp(20px, 3vw, 36px);
+        border: 1px solid rgb(255 255 255 / 14%);
+        border-radius: 18px;
+        background: rgb(8 28 39 / 82%);
+        box-shadow: 0 8px 24px rgb(0 0 0 / 22%);
+
+        > img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border: 1px solid rgb(255 255 255 / 12%);
+            border-radius: 12px;
+            object-fit: cover;
+            transition: transform 0.2s ease, filter 0.2s ease;
+        }
+    }
+
+    .metrics-copy {
+        h3 {
+            margin-bottom: 16px;
+            color: #8fe3ad;
+            font-size: clamp(26px, 3vw, 34px);
+        }
+
+        p {
+            margin: 0 0 14px;
+            font-size: 18px;
+            line-height: 1.65;
+        }
+    }
+}
+
 /* Devlog */
 #devlog {
-    --section-start-color: #05051a;
+    --section-start-color: #081b25;
     --section-end-color: #05051a;
     padding: 56px 32px 72px;
 
@@ -1918,6 +1974,18 @@ dialog.member-profile::backdrop {
         }
     }
 
+    #marketing {
+        padding: 48px 24px 56px;
+
+        > h2 {
+            padding-left: 0;
+        }
+
+        .metrics-panel {
+            grid-template-columns: minmax(0, 1fr);
+        }
+    }
+
     footer {
         gap: 20px;
 
@@ -2204,6 +2272,25 @@ dialog.member-profile::backdrop {
 
         .juegos-similares .grid {
             grid-template-columns: minmax(0, 1fr);
+        }
+    }
+
+    #marketing {
+        padding: 36px 16px 44px;
+
+        > h2 {
+            margin-bottom: 22px;
+            font-size: 27px;
+            letter-spacing: 0.04em;
+        }
+
+        .metrics-panel {
+            gap: 20px;
+            padding: 16px;
+        }
+
+        .metrics-copy p {
+            font-size: 16px;
         }
     }
 

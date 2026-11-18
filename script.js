@@ -5,6 +5,7 @@ const screenshotNext = screenshots.querySelector(".screenshot-arrow.next");
 const gameDescription = document.getElementById("gameDescription");
 const devlog = document.getElementById("devlog");
 const skills = document.getElementById("habilidades");
+const marketing = document.getElementById("marketing");
 const artZoomOverlay = document.getElementById("art_zoom_overlay");
 const artZoomImg = document.getElementById("art_zoom_img");
 const header = document.querySelector("header");
@@ -263,6 +264,7 @@ const openArtZoom = (e) => {
 screenshots.addEventListener("click", openArtZoom);
 devlog.addEventListener("click", openArtZoom);
 skills.addEventListener("click", openArtZoom);
+marketing.addEventListener("click", openArtZoom);
 
 artZoomOverlay.addEventListener("click", () => {
     artZoomOverlay.classList.remove("active");
