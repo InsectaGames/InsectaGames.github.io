@@ -45,28 +45,28 @@ if (!(gameplayShowcase instanceof HTMLImageElement) ||
 
 const gameSlides = [
     {
-        src: "images/screenshots/gameplay.gif",
-        alt: "Gameplay de Nest Invaders",
-        title: "Una colmena en peligro",
+        src: "images/screenshots/dayGameplay.gif",
+        alt: "GIF de Gameplay de día de Nest Invaders",
+        title: "¡Lidera una colmena parasitada!",
         description: "Explora el campo de batalla, reúne recursos y prepara tus defensas antes de que avance la amenaza enemiga."
     },
     {
-        src: "images/screenshots/screenshot_1.png",
-        alt: "Captura de pantalla de Nest Invaders",
-        title: "Planifica tu estrategia",
-        description: "Cada decisión cuenta: distribuye tus unidades con cabeza y encuentra el momento ideal para atacar."
+        src: "images/screenshots/levelUnlock.gif",
+        alt: "GIF de Nest Invaders mostrando la pantalla de desbloqueo de nivel",
+        title: "¡Múltiples niveles!",
+        description: "Avanza por cinco niveles únicos de dificultad incremental y descubre nuevo y desafiantes enemigos."
     },
     {
         src: "images/screenshots/screenshot_2.png",
-        alt: "Captura de pantalla de Nest Invaders durante una batalla",
-        title: "Defiende tu territorio",
-        description: "Refuerza los puntos vulnerables de la colmena y resiste las oleadas que intentan abrirse paso."
+        alt: "GIF de Gameplay de noche de Nest Invaders",
+        title: "¡Cuidado con la noche!",
+        description: "Durante el día solo serás tú contra el enemigo, sin embargo, la noche atrae a peligrosas amenazas para ambos bandos..."
     },
     {
         src: "images/screenshots/screenshot_3.png",
-        alt: "Captura de pantalla del mundo de Nest Invaders",
-        title: "Conquista el reino insecto",
-        description: "Avanza por un mundo lleno de rivales y lleva a tu colonia hasta la victoria."
+        alt: "GIF de batalla contra el minijefe de Nest Invaders",
+        title: "¡A por el jefe!",
+        description: "Planificate y enfrenta a poderosos jefes que pondrán a prueba tus habilidades."
     }
 ];
 
@@ -100,7 +100,8 @@ const artGallerySlides = {
     characters: [
         { src: "images/skills/babosa.png", alt: "Render de la Babosa Recolectora" },
         { src: "images/skills/babosa.gif", alt: "Gif de la babosa moviéndose" },
-        { src: "images/screenshots/screenshot_1.png", alt: "Placeholder de personaje en el campo de batalla" }
+        { src: "images/skills/golem.gif", alt: "Gif del gólem moviéndose" },
+        { src: "images/skills/avispa.gif", alt: "Gif de la avispa atacando" }
     ],
     scenarios: [
         { src: "images/skills/bg_forest.jpeg", alt: "Escenario del bosque de Nest Invaders" },
