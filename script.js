@@ -57,13 +57,13 @@ const gameSlides = [
         description: "Avanza por cinco niveles únicos de dificultad incremental y descubre nuevo y desafiantes enemigos."
     },
     {
-        src: "images/screenshots/screenshot_2.png",
+        src: "images/screenshots/nightGameplay.gif",
         alt: "GIF de Gameplay de noche de Nest Invaders",
         title: "¡Cuidado con la noche!",
         description: "Durante el día solo serás tú contra el enemigo, sin embargo, la noche atrae a peligrosas amenazas para ambos bandos..."
     },
     {
-        src: "images/screenshots/screenshot_3.png",
+        src: "images/screenshots/minibossGameplay.gif",
         alt: "GIF de batalla contra el minijefe de Nest Invaders",
         title: "¡A por el jefe!",
         description: "Planificate y enfrenta a poderosos jefes que pondrán a prueba tus habilidades."
@@ -98,6 +98,7 @@ screenshotNext.addEventListener("click", () => showGameSlide(activeGameSlide + 1
 
 const artGallerySlides = {
     characters: [
+        { src: "images/skills/personajes.png", alt: "Colección de los personajes de Nest Invaders" },
         { src: "images/skills/babosa.png", alt: "Render de la Babosa Recolectora" },
         { src: "images/skills/babosa.gif", alt: "Gif de la babosa moviéndose" },
         { src: "images/skills/golem.gif", alt: "Gif del gólem moviéndose" },
@@ -116,7 +117,7 @@ const artGallerySlides = {
     interface: [
         { src: "images/skills/ui.png", alt: "Render de la interfaz de Nest Invaders" },
         { src: "images/skills/levelSelect.png", alt: "Interfaz de selección de niveles" },
-        { src: "images/screenshots/screenshot_3.png", alt: "Placeholder de otra vista de la interfaz" }
+        { src: "images/skills/mainMenu.png", alt: "Interfaz del menú principal" }
     ]
 };
 
